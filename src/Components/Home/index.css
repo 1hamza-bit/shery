@@ -1,8 +1,25 @@
 .main{
-    background-image: url('../../Assets/main.jfif');
-    min-height: 400px;
+    /* background-image: url('../../Assets/main.jfif'); */
+    /* background-image: linear-gradient(to left,rgba(22, 28, 31, 0.4), rgba(7, 7, 10, 0.0)),url('../../Assets/main.jfif'); */
+    background-image: linear-gradient(to right, rgba(22, 28, 31, 0.7), rgba(7, 7, 10, 0.2)), url('../../Assets/main.jfif');
+
+    backdrop-filter: blur(2px) brightness(0.9);
+
+    min-height: 500px;
 }
 .overmain{
     /* height: 100%; */
-    background-color: rgba(0,0,0,0.4);
+    /* background-color: rgba(0,0,0,0.2); */
+    /* box-shadow: 0px 2px 4px -1px rgba(211, 205, 205, 0.226), 0px 4px 5px 0px rgba(230, 222, 222, 0.219), 0px 1px 10px 0px rgba(59, 58, 58, 0.26) !important; */
+}
+
+
+.second {
+    min-height: 400px;
+    background-color: rgb(34, 34, 34);
+}
+
+.right{
+    background-color: rgb(51, 51, 51);
+
 }
