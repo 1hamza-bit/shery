@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.twh{
+  color: white;
+}
+
+.pt10p{
+  padding-top: 10%;
+}
+
+.pt17p{
+  padding-top: 17%;
+}

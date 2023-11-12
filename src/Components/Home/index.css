@@ -17,9 +17,30 @@
 .second {
     min-height: 400px;
     background-color: rgb(34, 34, 34);
+    text-align: center;
+    /* padding-top: 10%; */
 }
 
 .right{
     background-color: rgb(51, 51, 51);
+
+}
+
+.tright{
+    background-color: antiquewhite;
+}
+
+.tleft{
+    background-image: linear-gradient(to right, rgba(22, 28, 31, 0.7), rgba(7, 7, 10, 0.2)), url('../../Assets/main.jfif');
+
+}
+
+.fright{
+    background-image: linear-gradient(to right, rgba(22, 28, 31, 0.7), rgba(7, 7, 10, 0.2)), url('../../Assets/main.jfif');
+
+}
+
+.fleft{
+    background-color: antiquewhite;
 
 }
