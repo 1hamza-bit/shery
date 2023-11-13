@@ -1,3 +1,5 @@
+import Footer from '../Layout/footer';
+import Header from '../Layout/header';
 import './index.css';
 const { Grid, Typography, Divider, Button } = require("@mui/material");
 
@@ -5,8 +7,15 @@ const Home = () => {
 
     return (
         <>
-            <Grid container className="main" >
-                <Grid className='overmain' item lg={6} md={6} sm={12} xs={6}>
+            <div container className="main" >
+                    <hr />
+                    <hr />
+
+                <Header />
+             
+                <Grid container>
+
+                <Grid className='overmain' item lg={6} md={6} sm={12} xs={12}>
                     <div className='w70p'>
                         <h1>Shaharyar Trading</h1>
                         <div style={{ textAlign: 'center' }}>
@@ -18,7 +27,13 @@ const Home = () => {
                         <Button variant='contained' className='bgmain'> Products </Button>
                     </div>
                 </Grid>
-            </Grid>
+                <Grid  item lg={6} md={6} sm={12} xs={12}>
+
+                </Grid>
+
+                </Grid>
+
+            </div>
             <Grid container spacing={0} className='second'>
                 <Grid item className='right' lg={6} md={6} sm={12} xs={12}>
                     <Typography className='twh pt10p'>hose hose hose</Typography>
@@ -61,6 +76,8 @@ const Home = () => {
                 </Grid>
 
             </Grid>
+
+            <Footer />
         </>
     )
 
