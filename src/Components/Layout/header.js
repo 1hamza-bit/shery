@@ -5,7 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AdbIcon from '@mui/icons-material/Adb';
 import './index.css'
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Products',];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Header = () => {
@@ -49,7 +49,7 @@ const Header = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            Shaharyar Traders
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

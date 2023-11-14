@@ -29,6 +29,23 @@
     background-color: rgb(34, 34, 34);
     text-align: center;
     /* padding-top: 10%; */
+    color: antiquewhite;
+}
+
+.third {
+    min-height: 400px;
+    background-color: rgb(34, 34, 34);
+    text-align: center;
+    /* padding-top: 10%; */
+    /* color: antiquewhite; */
+}
+
+.forth{
+    min-height: 400px;
+    background-color: rgb(34, 34, 34);
+    text-align: center;
+    /* padding-top: 10%; */
+    /* color: antiquewhite; */
 }
 
 .right{
