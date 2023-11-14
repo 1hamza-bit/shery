@@ -34,8 +34,10 @@ code {
 .divider{
   /* width: 14%; */
   color: burlywood;
-  margin: 0 auto;
+  /* margin: 0 5%; */
   background-color: rgb(233, 181, 122);
+  width: 15%;
+  border: 1px solid rgb(233, 181, 122);
 }
 
 .bgmain{
@@ -45,4 +47,8 @@ code {
 
 .p10p{
   padding: 10%;
+}
+
+.w50p{
+  width: 50%;
 }

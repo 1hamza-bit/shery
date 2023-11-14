@@ -36,20 +36,24 @@ const Home = () => {
             </div>
             <Grid container spacing={0} className='second'>
                 <Grid item className='right' lg={6} md={6} sm={12} xs={12}>
+                    <div className=''>
                     <Typography className='twh pt10p'>hose hose hose</Typography>
                     <Typography className='twh'>hose hose hose hose hose  hose</Typography>
-                    <div style={{ textAlign: 'center' }}>
-                        <Divider className='divider' />
+                    <div style={{ textAlign: 'center' , width: "100%" }}>
+                        <hr className=' divider'  />
                     </div>
                     <Typography className='twh'>hose hose hose hose hose  hose</Typography>
+                    </div>
                 </Grid>
                 <Grid item lg={6} md={6} sm={12} xs={12}>
+                <div className=''>
                     <Typography className='twh pt10p'>hose hose hose</Typography>
                     <Typography className='twh'>hose hose hose hose hose  hose</Typography>
-                    <div style={{ textAlign: 'center' }}>
-                        <Divider className='divider' />
+                    <div style={{ textAlign: 'center' , width: "100%" }}>
+                        <hr className=' divider'  />
                     </div>
                     <Typography className='twh'>hose hose hose hose hose  hose</Typography>
+                    </div>
                 </Grid>
 
             </Grid>
