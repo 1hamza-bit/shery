@@ -52,7 +52,7 @@ const Home = () => {
                     </div>
                     <Typography className='twh'>9.00 am ---- 11:00pm</Typography>
                     <Typography className='twh'>Monday ---- Saturday</Typography>
-                    <Button variant='contained' className='bgmain pt10p'> Email</Button>
+                    <Button variant='contained' className='bgmain pt10p'><a href={`mailto:${"hamtah112@gmail.com"}`} > Email </a></Button>
 
                     </div>
                 </Grid>
