@@ -9,10 +9,10 @@ import Projects from './Components/Portfolio';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
+    <App />
     {/* <Home />
      */}
-     <Projects />
+     {/* <Projects /> */}
   </React.StrictMode>
 );
 

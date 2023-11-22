@@ -4,6 +4,7 @@ import { AppBar, Box, Toolbar, IconButton, Typography, Menu, MenuItem, Container
 import MenuIcon from '@mui/icons-material/Menu'; 
 import AdbIcon from '@mui/icons-material/Adb';
 import './index.css'
+import { Link } from "react-router-dom";
 
 const pages = ['Products',];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -49,7 +50,7 @@ const Header = () => {
               textDecoration: 'none',
             }}
           >
-            Shaharyar Traders
+          <Link to='/'>Shaharyar Traders</Link>  
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -114,7 +115,7 @@ const Header = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+               <Link to="/products"> {page} </Link>
               </Button>
             ))}
           </Box>

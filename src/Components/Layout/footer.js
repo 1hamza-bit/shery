@@ -1,4 +1,5 @@
-import { Button, Divider, Grid } from "@mui/material";
+import { Button, Divider, Grid, List, ListItem, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 
 
@@ -27,6 +28,22 @@ const Footer = () => {
                         <div style={{ textAlign: 'center' }}>
                             <Divider className='divider' />
                         </div>
+                        <List>
+                            <ListItem>
+                                <Typography className="bold tu ">
+                                    <Link to="/products"> Products </Link>
+
+
+                                </Typography>
+                            </ListItem>
+                            <ListItem>
+                                <Typography className="bold  ">
+                                    <Link > Email: hamtah112@gmai.com </Link>
+
+
+                                </Typography>
+                            </ListItem>
+                        </List>
                        
                     </div>
             </Grid>
@@ -41,9 +58,8 @@ const Footer = () => {
                         <div style={{ textAlign: 'center' }}>
                             <Divider className='divider' />
                         </div>
-                        <p>A hydraulic hose trading company, such as Shaharyar Trading, specializes in supplying high-quality hydraulic hoses
-                            and efficient services. </p>
-                        <Button variant='contained' className='bgmain'> Products </Button>
+                        <p>Lets Connect with us with this Email button </p>
+                        <Button variant='contained' className='bgmain'><a href={`mailto:${"hamtah112@gmail.com"}`} > Email </a></Button>
                     </div>
             </Grid>
 
