@@ -6,13 +6,14 @@ import Header from '../Layout/header';
 // import axios from 'axios';
 // import { CSSTransition } from 'react-transition-group';
 // import { AnimatePresence, motion, useAnimation } from 'framer-motion';
+import green from '../../Assets/png green.png'
 
 const projectData = [
   {
     title: 'Project 1',
     category: 'Web Development',
     description: 'Description of project 1.',
-    image: 'https://w7.pngwing.com/pngs/230/486/png-transparent-garden-hoses-natural-rubber-plumbing-others-cable-plastic-plumbing-fixtures.png',
+    image: green,
     tag: "Hydraulic hose"
   },
   {
@@ -26,8 +27,8 @@ const projectData = [
     title: 'Project 2',
     category: 'UI/UX Design',
     description: 'Description of project 2.',
-    image: 'https://daubnerusa.com/wp-content/uploads/2021/04/4129.jpg',
-    tag: "Hydraulic hose"
+    // image: 'https://daubnerusa.com/wp-content/uploads/2021/04/4129.jpg',
+    // tag: "Hydraulic hose"
   },
   {
     title: 'Project 1',
@@ -40,8 +41,8 @@ const projectData = [
     title: 'Project 2',
     category: 'UI/UX Design',
     description: 'Description of project 2.',
-    image: 'https://www.thespruce.com/thmb/TZytWxNYr0nvxNDyvLBMjUP9JqU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/3SP4153399_hero-90bfa8e547794d269a9283a94f4ff74e.jpg',
-    tag: "Hydraulic hose"
+    // image: 'https://www.thespruce.com/thmb/TZytWxNYr0nvxNDyvLBMjUP9JqU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/3SP4153399_hero-90bfa8e547794d269a9283a94f4ff74e.jpg',
+    // tag: "Hydraulic hose"
   },
   {
     title: 'Project 2',
@@ -91,6 +92,7 @@ const Projects = () => {
 
 
   return (
+    <>
     <section id="projects" className={styles.projects}>
       <div className={styles.overlay}>
         <Header />
@@ -128,14 +130,14 @@ const Projects = () => {
            exit={{ opacity: 0 }}
            transition={{ duration: 0.9 }}
          > */}
-          <div key={index} className={styles['project-card']}>
+          <div key={index} className={`${styles['project-card']} ${!project.image ? styles.red : ''}`}>
             <div className={styles['project-image']}>
-              <img  src={project.image} alt={project.title} />
+            {project.image ? <img  src={project.image} alt={project.title} />: null}
             </div>
             <div className={styles['project-details']}>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
-              <span className={styles['category-tag']}>{project.tag}</span>
+              {project.tag ?<span className={styles['category-tag']}>{project.tag}</span>: null }
             </div>
           </div>
           {/* </motion.div> */}
@@ -148,10 +150,11 @@ const Projects = () => {
       </div>
     {/* </motion.div> */}
     </div>
-    <Footer />
     </div>
 
   </section>
+    <Footer />
+</>
   );
 };
 
