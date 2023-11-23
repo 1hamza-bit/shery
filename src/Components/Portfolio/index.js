@@ -60,7 +60,8 @@ const Projects = () => {
     visible: { opacity: 1, y: 0 },
   };
   const [data, setData] = useState([]);
-
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState(projectData);
   const [data1, setData1] = useState([]);
   const [tags, setTags] = useState([
     "Hydraulic hose", " Suction hose", 
@@ -86,8 +87,26 @@ const Projects = () => {
   // }, []);
 
   const handleTagClick = (selectedTag) => {
-    const filteredData = data1.filter((item) => item.tag === selectedTag);
+    const filteredData = projectData.filter((item) => item.tag === selectedTag);
     setData(filteredData);
+  };
+
+  const handleSearch = () => {
+    debugger
+    if (searchTerm === "" ){
+    setSearchResults(projectData);
+    }
+    else {
+    const results = projectData.filter(item =>
+      item.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setSearchResults(results);
+    }
+  };
+
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value);
+    handleSearch(); // Trigger search on every change
   };
 
 
@@ -104,7 +123,13 @@ const Projects = () => {
           variants={gridItemVariants}
           transition={{ duration: 0.9, delay: 0.9 }}
         >  */}
-      <h1>Our Projects</h1>
+      <h1>Our Projects   </h1>
+      <input
+        type="text"
+        placeholder="Search by title"
+        value={searchTerm}
+        onChange={handleChange}
+      />
       <div className={styles['project-tags']}>
       {tags.map((tag, index) => (
         <Button
@@ -121,7 +146,7 @@ const Projects = () => {
         <Grid container spacing={2}>
       
    
-        {projectData.map((project, index) => (
+        {searchResults.map((project, index) => (
       
           <Grid item lg={4} md={6} sm={11}>
                  {/* <motion.div

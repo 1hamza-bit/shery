@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Footer from '../Layout/footer';
 import Header from '../Layout/header';
 import './index.css';
@@ -8,8 +9,8 @@ const Home = () => {
     return (
         <>
             <div container className="main" >
-                    <hr />
-                    <hr />
+                    {/* <hr />
+                    <hr /> */}
 
                 <Header />
              
@@ -24,7 +25,7 @@ const Home = () => {
                         <p>A hydraulic hose trading company, such as Shaharyar Trading, specializes in supplying high-quality hydraulic hoses
                             and components for various industries. With a focus on reliability and performance, they cater
                             to diverse sectors and prioritize customer satisfaction through a comprehensive product catalog and efficient services. </p>
-                        <Button variant='contained' className='bgmain'> Products </Button>
+                        <Button variant='contained' className='bgmain'><Link to="/products"> Products </Link> </Button>
                     </div>
                 </Grid>
                 <Grid  item lg={6} md={6} sm={12} xs={12}>

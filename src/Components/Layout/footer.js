@@ -11,7 +11,7 @@ const Footer = () => {
         <>
         <Grid container spacing={2} className="footer">
             <Grid item lg={3} md={6} sm={12} xs={12}>
-            <div className='w70p p10p'>
+            <div className='w70p p010p'>
                         <h1>Shaharyar Trading</h1>
                         <div style={{ textAlign: 'center' }}>
                             <Divider className='divider' />
@@ -23,8 +23,8 @@ const Footer = () => {
                     </div>
             </Grid>
             <Grid item lg={3} md={6} sm={12} xs={12}>
-            <div className='w70p p10p'>
-                        <h1>Shaharyar Trading</h1>
+            <div className='w70p p010p'>
+                        <h1>About us</h1>
                         <div style={{ textAlign: 'center' }}>
                             <Divider className='divider' />
                         </div>
@@ -47,14 +47,14 @@ const Footer = () => {
                        
                     </div>
             </Grid>
-            <Grid item lg={3} md={6} sm={12} xs={12}>
-            <div className='w70p p10p'>
+            <Grid item lg={2} md={6} sm={12} xs={12}>
+            <div className='w70p '>
                       
                     </div>
             </Grid>
             <Grid item lg={3} md={6} sm={12} xs={12}>
-            <div className='w70p p10p'>
-                        <h1>Shaharyar Trading</h1>
+            <div className='w70p '>
+                        <h1>Contact Us</h1>
                         <div style={{ textAlign: 'center' }}>
                             <Divider className='divider' />
                         </div>

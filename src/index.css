@@ -7,6 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
@@ -17,6 +18,9 @@ code {
 a{
   color: inherit;
     text-decoration: none;
+    font-family: 'Cormorant Garamond',-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif !important;
 }
 
 .twh{
@@ -51,6 +55,10 @@ a{
 
 .p10p{
   padding: 10%;
+}
+
+.p010p{
+  padding: 1% 10%;
 }
 
 .w50p{
