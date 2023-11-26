@@ -7,6 +7,7 @@
 
 background-repeat: no-repeat;
 background-size: cover;
+min-width: 100%;
 .overlay{
   backdrop-filter: blur(20px) ;
 height: 2200px ;
@@ -127,3 +128,31 @@ padding: 3%;
      border-radius: 0px;
   }
   
+
+  .search{
+    font-size: 40px !important;
+    color: black;
+    font-weight: 600;
+    border: none !important;
+    margin-left: 3% !important;
+    background-color: transparent;
+  }
+
+  .search:hover{
+    border-bottom: 1px solid rgb(36, 27, 27);
+    border: none;
+  }
+  .search:focus{
+    border-bottom: 1px solid rgb(36, 27, 27);
+    border: none;
+  }
+
+  ::placeholder {
+    color: rgb(0, 0, 0);
+    opacity: 1; /* Firefox */
+  }
+
+  textarea:focus, input:focus{
+    outline: none;
+    border-bottom: 1px solid rgb(255, 198, 113);
+}
