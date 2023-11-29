@@ -7,17 +7,17 @@
 
 background-repeat: no-repeat;
 background-size: cover;
-min-width: 100%;
+// min-width: 100%;
 .overlay{
   backdrop-filter: blur(20px) ;
-height: 2200px ;
+// height: 2200px ;
 padding: 3%;
 
 }
 .secondoverlay{
   backdrop-filter: blur(10px) ;
   background-color: rgba(204, 204, 204, 0.2);
-height: 2000px;
+// height: 2000px;
 padding: 3%;
   border-radius: 3vw;
   margin-top: 1%;
@@ -126,6 +126,7 @@ padding: 3%;
   .red{
      background-color: rgba(150, 68, 68, 0.1); 
      border-radius: 0px;
+    
   }
   
 
@@ -155,4 +156,17 @@ padding: 3%;
   textarea:focus, input:focus{
     outline: none;
     border-bottom: 1px solid rgb(255, 198, 113);
+}
+
+
+
+@media screen and (max-width:880px) {
+
+  .red{
+    display: none !important;
+  }
+
+  .projects{
+    width: 100%;
+  }
 }

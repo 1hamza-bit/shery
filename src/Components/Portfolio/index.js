@@ -234,7 +234,7 @@ const Projects = () => {
    
         {data.map((project, index) => (
       
-          <Grid item lg={4} md={6} sm={11}>
+          <Grid item lg={4} md={6} sm={12} sx={12} className='jcc'>
                  {/* <motion.div
            initial={{ opacity: 0 }}
            animate={{ opacity: 1 }}

@@ -53,7 +53,7 @@ const Footer = () => {
                     </div>
             </Grid>
             <Grid item lg={3} md={6} sm={12} xs={12}>
-            <div className='w70p '>
+            <div className='w70p p010p'>
                         <h1>Contact Us</h1>
                         <div style={{ textAlign: 'center' }}>
                             <Divider className='divider' />
