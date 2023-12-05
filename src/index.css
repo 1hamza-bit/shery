@@ -91,3 +91,23 @@ a{
 }
 
 }
+
+.slider{
+  max-width: 700px;
+  height: 350px;
+ 
+}
+
+.slick-slider{
+  width: 700px !important;
+  height: 350px !important;
+}
+
+.slick-slider  img{
+  width:400px ;
+  height: 300px;
+}
+
+.slick-prev, .slick-next{
+  display: none !important;
+}

@@ -8,6 +8,7 @@ import Header from '../Layout/header';
 // import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import green from '../../Assets/png green.png'
 import { debounce } from 'lodash';
+import ProductSlider from './Slider';
 
 const projectData = [
   {
@@ -188,6 +189,19 @@ const Projects = () => {
     // handleSearch(); // Trigger search on every change
   };
 
+  const products = [
+    {
+      image: 'https://daubnerusa.com/wp-content/uploads/2021/04/4129.jpg',
+      title: 'Product 1',
+      description: 'Description for Product 1',
+    },
+    {
+      image: 'https://www.thespruce.com/thmb/TZytWxNYr0nvxNDyvLBMjUP9JqU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/3SP4153399_hero-90bfa8e547794d269a9283a94f4ff74e.jpg',
+      title: 'Product 2',
+      description: 'Description for Product 2',
+    },
+    // Add more products as needed
+  ];
 
   return (
     <>
@@ -195,7 +209,15 @@ const Projects = () => {
       <div className={styles.overlay}>
         <Header />
       <div className={`${styles.secondoverlay} `}>
-
+        <Grid container spacing={2}>
+        <Grid item lg={5} md={5} sm={12} sx={12} className=''>
+          <h1>Our most Popular Products</h1>
+          <p>jskdhjkashd  jkasjdajkhdjk ahjkd fhajkhdjkash jkdfhajkhd jahdhajkhdjhafhajksfh</p>
+        </Grid>
+        <Grid item lg={5} md={5} sm={12} sx={12} className=''>
+      <ProductSlider products={products}  />
+        </Grid>
+        </Grid>
      {/* <motion.div
           initial="hidden"
           animate="visible"
