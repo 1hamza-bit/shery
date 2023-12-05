@@ -106,7 +106,7 @@ const Header = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            <Link to='/'>Shaharyar Traders</Link>  
           </Typography>
           <Box sx={{ flexGrow: 1, justifyContent: "end", display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (

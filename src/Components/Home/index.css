@@ -78,3 +78,14 @@
     background-color: antiquewhite;
 
 }
+
+
+@media screen and (max-width:880px) {
+   .second, .third, .forth{
+    min-height: 550x;
+    height: 550px;
+   }
+   .right, .fright, .fleft, .tleft, .tright{
+    padding: 0 4%;
+   }
+  }

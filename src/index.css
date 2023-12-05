@@ -77,3 +77,37 @@ a{
   display: flex;
   align-items: center;
 }
+
+@media screen and (max-width:880px) {
+.jcc{
+  justify-content: center;
+  display: flex;
+}
+
+.dfi{
+  display: grid;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+}
+
+.slider{
+  max-width: 700px;
+  height: 350px;
+ 
+}
+
+.slick-slider{
+  width: 700px !important;
+  height: 350px !important;
+}
+
+.slick-slider  img{
+  width:400px ;
+  height: 300px;
+}
+
+.slick-prev, .slick-next{
+  display: none !important;
+}
