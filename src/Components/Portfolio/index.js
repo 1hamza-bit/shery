@@ -7,6 +7,8 @@ import Header from '../Layout/header';
 // import { CSSTransition } from 'react-transition-group';
 // import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import green from '../../Assets/png green.png'
+import pipe from '../../Assets/pipe.png'
+
 import { debounce } from 'lodash';
 
 const projectData = [
@@ -21,7 +23,7 @@ const projectData = [
     title: 'Project 2',
     category: 'UI/UX Design',
     description: 'Description of project 2.',
-    image: 'https://www.thespruce.com/thmb/TZytWxNYr0nvxNDyvLBMjUP9JqU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/3SP4153399_hero-90bfa8e547794d269a9283a94f4ff74e.jpg',
+    image: pipe,
     tag: "Hydraulic hose"
   },
   {
