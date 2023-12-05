@@ -8,6 +8,11 @@ import Header from '../Layout/header';
 // import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import green from '../../Assets/png green.png'
 import pipe from '../../Assets/pipe.png'
+import hydraulic from '../../Assets/hydraulic.png'
+import fire from '../../Assets/fire.png'
+import gas from '../../Assets/gas.png'
+import canvas from '../../Assets/canvas.png'
+
 
 import { debounce } from 'lodash';
 import ProductSlider from './Slider';
@@ -24,7 +29,7 @@ const projectData = [
     title: 'Project 2',
     category: 'UI/UX Design',
     description: 'Description of project 2.',
-    image: pipe,
+    image: hydraulic,
     tag: "Hydraulic hose"
   },
   {
@@ -38,7 +43,7 @@ const projectData = [
     title: 'Project 1',
     category: 'Web Development',
     description: 'Description of project 1.',
-    image: 'https://w7.pngwing.com/pngs/230/486/png-transparent-garden-hoses-natural-rubber-plumbing-others-cable-plastic-plumbing-fixtures.png',
+    image: canvas,
     tag: "Hydraulic hose"
   },
   {
@@ -52,7 +57,15 @@ const projectData = [
     title: 'Project 2',
     category: 'UI/UX Design',
     description: 'Description of project 2.',
-    image: 'https://daubnerusa.com/wp-content/uploads/2021/04/4129.jpg',
+    image: gas,
+    tag: "Hydraulic hose"
+  },
+
+  {
+    title: 'Project 2',
+    category: 'UI/UX Design',
+    description: 'Description of project 2.',
+    image: fire,
     tag: "Hydraulic hose"
   },
   // Add more projects here
@@ -226,7 +239,7 @@ const Projects = () => {
           variants={gridItemVariants}
           transition={{ duration: 0.9, delay: 0.9 }}
         >  */}
-        <div className='dfi'>
+        <div className='dfi mt15'>
       <h1>Our Projects   </h1>
       <input
       variant='standard'

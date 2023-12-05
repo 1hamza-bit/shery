@@ -111,3 +111,7 @@ a{
 .slick-prev, .slick-next{
   display: none !important;
 }
+
+.mt15{
+  margin-top: 5%;
+}
