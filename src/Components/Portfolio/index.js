@@ -35,7 +35,8 @@ const projectData = [
   {
     title: 'Project 2',
     category: 'UI/UX Design',
-    description: 'Description of project 2.',
+    description: "Introducing our star performers – the epitome of reliability and versatility in rubber hoses Engineered for durability and flexibility our most popular products deliver unmatched performance across various applications. From heavy-duty industrial use to everyday tasks"
+ 
     // image: 'https://daubnerusa.com/wp-content/uploads/2021/04/4129.jpg',
     // tag: "Hydraulic hose"
   },
@@ -81,7 +82,7 @@ const Projects = () => {
   const [searchResults, setSearchResults] = useState(projectData);
   const [data1, setData1] = useState([]);
   const [tags, setTags] = useState([
-    "Hydraulic hose", " Suction hose", 
+    "Hydraulic hose", " Suction hose",
   ]);
 
   // useEffect(() => {
@@ -89,7 +90,7 @@ const Projects = () => {
   //     .get('https://kobmob.pythonanywhere.com/api/portfolio')
   //     .then((response) => {
   //       // Save the response data in the state
-        
+
   //       setData(response.data);
   //       setData1(response.data);
 
@@ -105,11 +106,11 @@ const Projects = () => {
 
   const handleTagClick = (selectedTag) => {
     const filteredData = projectData.filter((item) => item.tag === selectedTag);
-    if (selectedTag === "clear"){
+    if (selectedTag === "clear") {
       setData(projectData)
     }
-    else{
-    setData(filteredData);
+    else {
+      setData(filteredData);
     }
   };
 
@@ -124,13 +125,13 @@ const Projects = () => {
   //       const results = projectData.filter(item =>
   //         item.title.toLowerCase().includes(searchTerm.toLowerCase())
   //       );
-  
+
   //       // Assuming you want to update some state when the search is done
   //       if (results.length === 0) {
   //         // Show an alert if nothing is found
   //         alert("Nothing found");
   //       }
-  
+
   //       // Update the state with either the search results or the original data
   //       setData(results.length > 0 ? results : projectData);
   //     }, 500);
@@ -138,7 +139,7 @@ const Projects = () => {
   //     // If the search term is less than 2 characters, revert to the original data
   //     setData(projectData);
   //   }
-  
+
   // };
 
   useEffect(() => {
@@ -196,7 +197,7 @@ const Projects = () => {
   // const handleSearch = (event) => {
   //   // Check if the Enter key is pressed (key code 13)
   //     debouncedSearch(searchTerm);
-    
+
   // };
 
   const handleChange = (e) => {
@@ -220,89 +221,96 @@ const Projects = () => {
 
   return (
     <>
-    <section id="projects" className={styles.projects}>
-      <div className={styles.overlay}>
-        <Header />
-      <div className={`${styles.secondoverlay} `}>
-        <Grid container spacing={2}>
-        <Grid item lg={5} md={5} sm={12} sx={12} className=''>
-          <h1>Our most Popular Products</h1>
-          <p>jskdhjkashd  jkasjdajkhdjk ahjkd fhajkhdjkash jkdfhajkhd jahdhajkhdjhafhajksfh</p>
-        </Grid>
-        <Grid item lg={5} md={5} sm={12} sx={12} className=''>
-      <ProductSlider products={products}  />
-        </Grid>
-        </Grid>
-     {/* <motion.div
+      <section id="projects" className={styles.projects}>
+        <div className={styles.overlay}>
+          <div className={`${styles.secondoverlay} `}>
+          <Header />
+
+            <Grid container spacing={2} className='mt5p'>
+              <Grid item lg={5} md={5} sm={12} sx={12} className={styles.inquiry}>
+                <h1>Our most Popular Products</h1>
+                <p> Introducing our star performers – the epitome of reliability and versatility in rubber hoses.
+                  Engineered for durability and flexibility, our most popular products deliver unmatched
+                  performance across various applications. From heavy-duty industrial use to everyday tasks,
+                  these hoses are crafted to withstand the toughest conditions while ensuring optimal functionality.
+                  Trust in the quality that sets the standard –
+                  explore our top-rated rubber hoses today and experience durability like never before.</p>
+                  <Button className=''>Send Inquiry</Button>
+              </Grid>
+              <Grid item lg={5} md={5} sm={12} sx={12} className=''>
+                <ProductSlider products={products} />
+              </Grid>
+            </Grid>
+            {/* <motion.div
           initial="hidden"
           animate="visible"
           variants={gridItemVariants}
           transition={{ duration: 0.9, delay: 0.9 }}
         >  */}
-        <div className='dfi mt15'>
-      <h1>Our Projects   </h1>
-      <input
-      variant='standard'
-        type="text"
-        size='large'
-        placeholder="Search by title"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        // onKeyDown={handleSearch}
-        className={styles.search}
-      />
-      </div>
-      <div className={styles['project-tags']}>
-      <Button className={styles.tag} onClick={() => handleTagClick("clear")}>Clear</Button>  
-      {tags.map((tag, index) => (
-        <Button
-          key={index}
-          className={styles.tag}
-          onClick={() => handleTagClick(tag)}
-        >
-          <span>{tag}</span>
-        </Button>
-      ))}
-      
-      </div>
-      <div className={styles['project-cards']}>
-        <Grid container spacing={2}>
-      
-   
-        {data.map((project, index) => (
-      
-          <Grid item lg={4} md={6} sm={12} sx={12} className='jcc'>
-                 {/* <motion.div
+            <div className='dfi mt15'>
+              <h1>Our Projects   </h1>
+              <input
+                variant='standard'
+                type="text"
+                size='large'
+                // placeholder="Search by title"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                // onKeyDown={handleSearch}
+                className={styles.search}
+              />
+            </div>
+            <div className={styles['project-tags']}>
+              <Button className={styles.tag} onClick={() => handleTagClick("clear")}>Clear</Button>
+              {tags.map((tag, index) => (
+                <Button
+                  key={index}
+                  className={styles.tag}
+                  onClick={() => handleTagClick(tag)}
+                >
+                  <span>{tag}</span>
+                </Button>
+              ))}
+
+            </div>
+            <div className={styles['project-cards']}>
+              <Grid container spacing={2}>
+
+
+                {data.map((project, index) => (
+
+                  <Grid item lg={4} md={6} sm={12} sx={12} className='jcc'>
+                    {/* <motion.div
            initial={{ opacity: 0 }}
            animate={{ opacity: 1 }}
            exit={{ opacity: 0 }}
            transition={{ duration: 0.9 }}
          > */}
-          <div key={index} className={`${styles['project-card']} ${!project.image ? styles.red : ''}`}>
-            <div className={styles['project-image']}>
-            {project.image ? <img  src={project.image} alt={project.title} />: null}
-            </div>
-            <div className={styles['project-details']}>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              {project.tag ?<span className={styles['category-tag']}>{project.tag}</span>: null }
-            </div>
-          </div>
-          {/* </motion.div> */}
-          </Grid>
-          
-        ))}
-        
-       
-        </Grid>
-      </div>
-    {/* </motion.div> */}
-    </div>
-    </div>
+                    <div key={index} className={`${styles['project-card']} ${!project.image ? styles.red : ''}`}>
+                      <div className={styles['project-image']}>
+                        {project.image ? <img src={project.image} alt={project.title} /> : null}
+                      </div>
+                      <div className={styles['project-details']}>
+                        <h3>{project.title}</h3>
+                        <p>{project.description}</p>
+                        {project.tag ? <span className={styles['category-tag']}>{project.tag}</span> : null}
+                      </div>
+                    </div>
+                    {/* </motion.div> */}
+                  </Grid>
 
-  </section>
-    <Footer />
-</>
+                ))}
+
+
+              </Grid>
+            </div>
+            {/* </motion.div> */}
+          </div>
+        </div>
+
+      </section>
+      <Footer />
+    </>
   );
 };
 

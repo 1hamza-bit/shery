@@ -3,7 +3,7 @@
     justify-content: center;
     // background: #161616;
   // border-radius: 3vw;
-  background-image: linear-gradient(to right, rgba(82, 82, 82, 0.9), rgba(46, 46, 46, 0.8)), url('../../Assets/main.jfif');
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('../../Assets/main.jfif');
 
 background-repeat: no-repeat;
 background-size: cover;
@@ -12,12 +12,12 @@ color: white;
 .overlay{
   backdrop-filter: blur(20px) ;
 // height: 2200px ;
-// padding: 3%;
+padding: 1% 3%;
 
 }
 .secondoverlay{
   backdrop-filter: blur(10px) ;
-  background-color: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(175deg, rgba(41, 41, 41, 0.8) 0%, rgba(17, 17, 17, 0.8) 50%, rgba(0, 0, 0, 0.8) 100%);
 // height: 2000px;
 padding: 3%;
   border-radius: 3vw;
@@ -49,7 +49,7 @@ padding: 3%;
     background-color: #e0cb07 !important;
     cursor: pointer !important;
     border-radius: 10px !important;
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 6px rgba(121, 120, 120, 0.5);
 
   }
   .tag :hover{
@@ -71,14 +71,14 @@ padding: 3%;
   .project-card {
     // border: 1px solid #ccc;
     border-radius: 26px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    // overflow: hidden;
+    box-shadow: 0 4px 6px rgba(168, 168, 168, 0.3);
     display: flex;
     flex-direction: column;
     position: relative;
     max-width: 400px;
     margin-top: 4%;
-    background-color: rgba(29, 29, 29, 0.1);
+    background-color: rgba(43, 42, 42, 0.2);
     min-height: 375px;
     max-height: 375px;
   }
@@ -87,7 +87,7 @@ padding: 3%;
   .project-image {
     position: relative;
     // height: 50%; /* Display only half of the image initially */
-    overflow: hidden; /* Prevent image from overflowing */
+    // overflow: hidden; /* Prevent image from overflowing */
     transition: height 0.5s ease; /* Add a smooth transition effect */
 
     img {
@@ -95,7 +95,7 @@ padding: 3%;
       height: auto;
       transition: transform 1s linear; /* Adjust the scrolling speed */
       transform: translateY(0); /* Start position at the top */
-      max-height: 300px;
+      max-height: 265px;
     }
 
     &:hover {
@@ -112,9 +112,11 @@ padding: 3%;
   .project-details {
     padding: 20px;
     padding-top: 0px;
+    background-color: transparent;
   
     h3 {
       margin-bottom: 10px;
+      margin-top: 0px;
     }
   
     p {
@@ -133,14 +135,18 @@ padding: 3%;
   }
 
   .red{
-    background: linear-gradient(175deg, rgba(159,28,28,0.4) 0%, rgba(199,3,96,0.5) 50%, rgba(255,0,78,0.3) 100%);
+    // background: linear-gradient(175deg, rgba(159,28,28,0.4) 0%, rgba(199,3,96,0.5) 50%, rgba(255,0,78,0.3) 100%);
+    background: transparent !important;
+
     transform: scale(1.1);
+    box-shadow: none;
+    padding: 15px;
   }
   
 
   .search{
     font-size: 40px !important;
-    color: black;
+    color: rgb(252, 252, 252);
     font-weight: 600;
     border: none !important;
     margin-left: 3% !important;
@@ -149,11 +155,11 @@ padding: 3%;
   }
 
   .search:hover{
-    border-bottom: 1px solid rgb(36, 27, 27);
+    border-bottom: 1px solid rgb(253, 253, 253);
     border: none;
   }
   .search:focus{
-    border-bottom: 1px solid rgb(36, 27, 27);
+    border-bottom: 1px solid rgb(255, 255, 255);
     border: none;
   }
 
@@ -164,7 +170,7 @@ padding: 3%;
 
   textarea:focus, input:focus{
     outline: none;
-    border-bottom: 1px solid rgb(0, 0, 0 ) !important;
+    border-bottom: 1px solid rgb(255, 255, 255) !important;
 }
 
 
@@ -180,3 +186,14 @@ padding: 3%;
   }
 }
 
+.inquiry{
+  p{
+    font-size: 16px;
+
+  }
+  button{
+    background : linear-gradient(175deg, rgba(159, 28, 28, 0.837) 0%, rgba(199, 3, 45, 0.8) 50%, rgba(255,0,78,0.7) 100%); ;
+    color: white !important;
+    padding: 4px 8px !important;
+  }
+}
