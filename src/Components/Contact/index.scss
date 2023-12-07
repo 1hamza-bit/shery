@@ -1,0 +1,19 @@
+.contact{
+    // Your section-level styles here
+    justify-content: center;
+    // background: #161616;
+  // border-radius: 3vw;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('../../Assets/main.jfif');
+
+background-repeat: no-repeat;
+background-size: cover;
+color: white;
+// min-width: 100%;
+.overlay{
+  backdrop-filter: blur(20px) ;
+// height: 2200px ;
+padding: 1% 3%;
+
+}
+
+}
