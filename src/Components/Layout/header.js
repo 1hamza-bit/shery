@@ -6,7 +6,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import './index.css'
 import { Link } from "react-router-dom";
 
-const pages = ['Products',];
+const pages = ['Products', 'Contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Header = () => {
@@ -109,15 +109,23 @@ const Header = () => {
             <Link to='/'>Shaharyar Traders</Link>  
           </Typography>
           <Box sx={{ flexGrow: 1, justifyContent: "end", display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+          
               <Button
-                key={page}
+                // key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-               <Link to="/products"> {page} </Link>
+               <Link to="/products"> Products </Link>
               </Button>
-            ))}
+
+              <Button
+                // key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+               <Link to="/contact"> Contact </Link>
+              </Button>
+       
           </Box>
 
           {/* <Box sx={{ flexGrow: 0 }}>

@@ -50,7 +50,7 @@ const projectData = [
   {
     title: 'Project 2',
     category: 'UI/UX Design',
-    description: 'Description of project 2.',
+    description: "Introducing our star performers – the epitome of reliability and versatility in rubber hoses Engineered for durability and flexibility our most popular products deliver unmatched performance across various applications. From heavy-duty industrial use to everyday tasks"
     // image: 'https://www.thespruce.com/thmb/TZytWxNYr0nvxNDyvLBMjUP9JqU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/3SP4153399_hero-90bfa8e547794d269a9283a94f4ff74e.jpg',
     // tag: "Hydraulic hose"
   },

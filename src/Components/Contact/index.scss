@@ -8,7 +8,8 @@
 background-repeat: no-repeat;
 background-size: cover;
 color: white;
-// min-width: 100%;
+min-height: 100vh;
+min-width: 100vw;
 .overlay{
   backdrop-filter: blur(20px) ;
 // height: 2200px ;

@@ -3,6 +3,7 @@ import './App.css';
 import Home from './Components/Home';
 import Projects from './Components/Portfolio';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Contact from './Components/Contact';
 
 
 function App() {
@@ -18,6 +19,10 @@ function App() {
         <Route
           path="/products"
           element={<Projects />}
+        />
+          <Route
+          path="/contact"
+          element={<Contact />}
         />
         </Routes>
         </Router>
