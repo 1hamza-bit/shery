@@ -13,7 +13,7 @@ const Contact = () => {
             <div className="contact">
                 <div className="overlay">
                 <Header />
-                <h1>hamzaaa</h1>
+                {/* <h1 className="mt5p">hamzaaa</h1> */}
 
                 <SignInSide />
                 </div>

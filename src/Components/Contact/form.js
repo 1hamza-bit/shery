@@ -63,7 +63,7 @@ export default function SignInSide() {
 
           </div>
           </Grid>
-        <Grid item xs={12} sm={8} md={5}  elevation={6} square>
+        <Grid item xs={12} sm={8} md={5} className='info'  elevation={6} square>
           <Box
             sx={{
               my: 8,
@@ -74,10 +74,12 @@ export default function SignInSide() {
             }}
           >
             <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-              <LockOutlinedIcon />
+              {/* <LockOutlinedIcon />
+               */}
+               {/* <Typography>Contact Information</Typography> */}
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign in
+            Contact Information
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
@@ -100,10 +102,10 @@ export default function SignInSide() {
                 id="password"
                 autoComplete="current-password"
               />
-              <FormControlLabel
+              {/* <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
-              />
+              /> */}
               <Button
                 type="submit"
                 fullWidth
