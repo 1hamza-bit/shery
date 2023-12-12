@@ -11,7 +11,7 @@ const Footer = () => {
         <>
         <Grid container spacing={2} className="footer">
             <Grid item lg={3} md={6} sm={12} xs={12}>
-            <div className='w70p p010p'>
+            <div className=' p010p'>
                         <h1>Shaharyar Trading</h1>
                         <div style={{ textAlign: 'center' }}>
                             <Divider className='divider' />

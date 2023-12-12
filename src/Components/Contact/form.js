@@ -12,6 +12,10 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Stack } from '@mui/material';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import EmailIcon from '@mui/icons-material/Email';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 function Copyright(props) {
   return (
@@ -42,7 +46,7 @@ export default function SignInSide() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Grid container component="main" sx={{ height: '' }}>
+      <Grid container component="main" sx={{ height: '', marginTop: "40px" }}>
         <CssBaseline />
         <Grid
           item
@@ -63,7 +67,7 @@ export default function SignInSide() {
 
           </div>
           </Grid>
-        <Grid item xs={12} sm={8} md={5} className='info'  elevation={6} square>
+        <Grid item xs={12} sm={8} md={6} className='info'  elevation={6} square>
           <Box
             sx={{
               my: 8,
@@ -82,39 +86,16 @@ export default function SignInSide() {
             Contact Information
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-                autoFocus
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
+            <Stack direction="row" className='stack'><p><LocalPhoneIcon color="disabled" sx={{ fontSize: 40, marginTop: "10px", color: "rgb(18 206 161)" }} /> </p> <p>03224594593</p></Stack>
+            <Stack direction="row" className='stack'><p><EmailIcon color="disabled" sx={{ fontSize: 40, marginTop: "10px", color: "rgb(18 206 161)" }}/> </p> <p>Shaharyartrading@gmail.com</p></Stack>
+
               {/* <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               /> */}
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                Sign In
-              </Button>
-              <Grid container>
+                         <Stack direction="row" className='stack'><p><LocationOnIcon color="disabled" sx={{ fontSize: 40, marginTop: "10px", color: "rgb(18 206 161)" }}/>  </p> <p>Brandeth Road Lahore</p></Stack>
+
+              {/* <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">
                     Forgot password?
@@ -125,7 +106,7 @@ export default function SignInSide() {
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
-              </Grid>
+              </Grid> */}
               <Copyright sx={{ mt: 5 }} />
             </Box>
           </Box>
