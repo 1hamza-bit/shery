@@ -1,7 +1,7 @@
 .main{
     /* background-image: url('../../Assets/main.jfif'); */
     /* background-image: linear-gradient(to left,rgba(22, 28, 31, 0.4), rgba(7, 7, 10, 0.0)),url('../../Assets/main.jfif'); */
-    background-image: linear-gradient(to right, rgba(22, 28, 31, 0.7), rgba(7, 7, 10, 0.2)), url('../../Assets/main.jfif');
+    background-image: linear-gradient(to right, rgba(22, 28, 31, 0.7), rgba(7, 7, 10, 0.2)), url('../../Assets/bghome.png');
 
     backdrop-filter: blur(2px) brightness(0.6);
 
@@ -32,11 +32,36 @@
 
 
 .second {
-    min-height: 400px;
+    min-height: 480px;
     background-color: rgb(34, 34, 34);
     text-align: center;
     /* padding-top: 10%; */
     color: antiquewhite;
+    height: auto;
+}
+.card{
+    margin: 8%;
+    /* margin-left: 2%; */
+    background-color: rgba(7, 7, 10, 0.0) !important;
+    color: antiquewhite !important;
+    min-height: 400px;
+    max-height: 420px;
+    overflow: hidden;
+}
+.card div  {
+    color: wheat;
+    text-align: left;
+    font-family: 'Cormorant Garamond',source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+    padding: 2%;
+}
+.card p  {
+    color: rgb(236, 236, 236);
+    font-family: 'Cormorant Garamond',source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.card img {
+    height: 200px;
 }
 
 .third {
@@ -45,6 +70,7 @@
     text-align: center;
     /* padding-top: 10%; */
     /* color: antiquewhite; */
+    padding: 1%;
 }
 
 .forth{
@@ -53,6 +79,7 @@
     text-align: center;
     /* padding-top: 10%; */
     /* color: antiquewhite; */
+    padding: 1%;
 }
 
 .right{
@@ -61,7 +88,7 @@
 }
 
 .tright{
-    background-color: antiquewhite;
+    background-color: rgb(219, 217, 215);
 }
 
 .tleft{
@@ -75,7 +102,7 @@
 }
 
 .fleft{
-    background-color: antiquewhite;
+    background-color: rgb(219, 217, 213);
 
 }
 

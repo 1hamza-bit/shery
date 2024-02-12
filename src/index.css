@@ -9,6 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   line-height: initial !important;
+  background-color: rgb(34, 34, 34);
 
 }
 
@@ -124,4 +125,7 @@ a{
 
 .mt5p{
   margin-top:  5% !important;
+}
+.pl{
+  padding-left: 10px;
 }
