@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Footer from '../Layout/footer';
 import Header from '../Layout/header';
-import './index.css';
+import './index.scss';
 import green from '../../Assets/png green.png'
 import pipe from '../../Assets/pipe.png'
 import hydraulic from '../../Assets/hydraulic.png'
@@ -76,7 +76,9 @@ const Home = () => {
                 </Grid>
 
             </div>
-            <h1 className='pl'>Our Most Popular Products</h1>
+            <div className='featured'>
+            <h1 className='pl-8 mt-8 '>Our Most Popular Products</h1>
+            <hr className='ml-8 mt-2 '/>
             <Grid container spacing={0} className='second'>
             {products.map((product, index) => (
                 <Grid item className='card' lg={3} md={4} sm={6} xs={6}>
@@ -102,6 +104,7 @@ const Home = () => {
             ))}
             
             </Grid>
+            </div>
             <Grid container spacing={0} className='second'>
                 <Grid item className='right' lg={6} md={6} sm={12} xs={12}>
                     <div className=''>

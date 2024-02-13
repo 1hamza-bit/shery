@@ -25,7 +25,7 @@
 
 
 .footer{
-    background: linear-gradient(90deg, rgba(80, 75, 43, 0.5) 0%, rgba(221, 198, 142, 0.2) 52%);
+    background: linear-gradient(90deg, rgba(173, 148, 109, 0.5) 0%, rgba(168, 148, 111, 0.2) 52%);
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     margin-top: 0% !important;
 }
