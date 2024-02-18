@@ -77,7 +77,7 @@ export default function SignInSide() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <Avatar sx={{ m: 1, bgcolor: 'dark' }}>
               {/* <LockOutlinedIcon />
                */}
                {/* <Typography>Contact Information</Typography> */}

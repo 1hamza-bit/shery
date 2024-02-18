@@ -79,6 +79,7 @@ const Projects = () => {
   };
   const [data, setData] = useState(projectData);
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedTag, setSelectedTag] = useState('');
   const [searchResults, setSearchResults] = useState(projectData);
   const [data1, setData1] = useState([]);
   const [tags, setTags] = useState([
@@ -104,9 +105,11 @@ const Projects = () => {
   //     });
   // }, []);
 
-  const handleTagClick = (selectedTag) => {
-    const filteredData = projectData.filter((item) => item.tag === selectedTag);
-    if (selectedTag === "clear") {
+  const handleTagClick = (selectedTag2) => {
+    debugger
+    setSelectedTag(selectedTag2)
+    const filteredData = projectData.filter((item) => item.tag === selectedTag2);
+    if (selectedTag2 === "clear") {
       setData(projectData)
     }
     else {
@@ -265,7 +268,7 @@ const Projects = () => {
               {tags.map((tag, index) => (
                 <Button
                   key={index}
-                  className={styles.tag}
+                  className={`${styles.tag} ${tag === selectedTag ? styles.active: ""}`}
                   onClick={() => handleTagClick(tag)}
                 >
                   <span>{tag}</span>
@@ -287,9 +290,9 @@ const Projects = () => {
            transition={{ duration: 0.9 }}
          > */}
                     <div key={index} className={`${styles['project-card']} ${!project.image ? styles.red : ''}`}>
-                      <div className={styles['project-image']}>
-                        {project.image ? <img src={project.image} alt={project.title} /> : null}
-                      </div>
+                    {project.image ? <div className={styles['project-image']}>
+                         <img src={project.image} alt={project.title} /> 
+                      </div> : null}
                       <div className={styles['project-details']}>
                         <h3>{project.title}</h3>
                         <p>{project.description}</p>

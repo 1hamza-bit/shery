@@ -9,7 +9,7 @@ const Footer = () => {
     return(
 
         <>
-        <Grid container spacing={2} className="footer">
+        <Grid container spacing={2} className="footer bg-amber-100">
             <Grid item lg={3} md={6} sm={12} xs={12}>
             <div className=' p010p'>
                         <h1>Shaharyar Trading</h1>

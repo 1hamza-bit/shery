@@ -16,26 +16,26 @@ const Home = () => {
 
     const products = [
         {
-          title: 'Rubber Hose 1',
-          category: 'Industrial Rubber Hoses',
-          description: "Introducing our star performers – the epitome of reliability and versatility in rubber hoses. Engineered for durability and flexibility, our most popular products deliver unmatched performance across various applications. From heavy-duty industrial use to everyday tasks.",
-          image: green,
-          tag: "Rubber hose"
+            title: 'Rubber Hose 1',
+            category: 'Industrial Rubber Hoses',
+            description: "Introducing our star performers – the epitome of reliability and versatility in rubber hoses. Engineered for durability and flexibility, our most popular products deliver unmatched performance across various applications. From heavy-duty industrial use to everyday tasks.",
+            image: green,
+            tag: "Rubber hose"
         },
         {
-          title: 'Rubber Hose 2',
-          category: 'Commercial Rubber Hoses',
-         description: "Introducing our star performers – the epitome of reliability and versatility in rubber hoses. Engineered for durability and flexibility, our most popular products deliver unmatched performance across various applications. From heavy-duty industrial use to everyday tasks.",
+            title: 'Rubber Hose 2',
+            category: 'Commercial Rubber Hoses',
+            description: "Introducing our star performers – the epitome of reliability and versatility in rubber hoses. Engineered for durability and flexibility, our most popular products deliver unmatched performance across various applications. From heavy-duty industrial use to everyday tasks.",
 
-          image: hydraulic,
-          tag: "Rubber hose"
+            image: hydraulic,
+            tag: "Rubber hose"
         },
         {
-          title: 'Rubber Hose 3',
-          category: 'Specialty Rubber Hoses',
-          description: "Introducing our star performers – the epitome of reliability and versatility in rubber hoses. Engineered for durability and flexibility, our most popular products deliver unmatched performance across various applications. From heavy-duty industrial use to everyday tasks.",
-          image: green,
-          tag: "Rubber hose"
+            title: 'Rubber Hose 3',
+            category: 'Specialty Rubber Hoses',
+            description: "Introducing our star performers – the epitome of reliability and versatility in rubber hoses. Engineered for durability and flexibility, our most popular products deliver unmatched performance across various applications. From heavy-duty industrial use to everyday tasks.",
+            image: green,
+            tag: "Rubber hose"
         },
 
         {
@@ -44,8 +44,8 @@ const Home = () => {
             description: "Introducing our star performers – the epitome of reliability and versatility in rubber hoses. Engineered for durability and flexibility, our most popular products deliver unmatched performance across various applications. From heavy-duty industrial use to everyday tasks.",
             image: green,
             tag: "Rubber hose"
-          }
-      ];
+        }
+    ];
 
     return (
         <>
@@ -77,33 +77,37 @@ const Home = () => {
 
             </div>
             <div className='featured'>
-            <h1 className='pl-8 mt-8 '>Our Most Popular Products</h1>
-            <hr className='ml-8 mt-2 '/>
-            <Grid container spacing={0} className='second'>
-            {products.map((product, index) => (
-                <Grid item className='card' lg={3} md={4} sm={6} xs={6}>
-                    <Card className='card' sx={{ maxWidth: 345 }}>
-                        <CardActionArea>
-                            <CardMedia
-                                component="img"
-                                height="140"
-                                image={product.image}
-                                alt="green iguana"
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
-                                   {product.title}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                   {product.description}
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
+                <h1 className='pl-8 mt-8 '>Our Most Popular Products</h1>
+                <hr className='ml-8 mt-2 ' />
+                <Grid container spacing={0} className='second'>
+                    {products.map((product, index) => (
+                        <Grid item lg={3} md={4} sm={6} xs={6}>
+                            <Card className='card' sx={{ maxWidth: 345 }}>
+                                
+                                    <div className='img'>
+                                    <CardMedia
+                                        component="img"
+                                        height="240"
+                                        image={product.image}
+                                        alt="green iguana"
+                                    />
+                                    </div>
+                                    <CardContent >
+                                        <Typography gutterBottom variant="h5" component="div">
+                                            {product.title}
+                                        </Typography>
+                                        <Typography className='content' variant="body2" color="text.secondary">
+                                            {product.description}
+                                        </Typography>
+                                    </CardContent>
+                                    <CardActionArea>
+                                        <Button variant='contained'  fullWidth>See more</Button>
+                                </CardActionArea>
+                            </Card>
+                        </Grid>
+                    ))}
+
                 </Grid>
-            ))}
-            
-            </Grid>
             </div>
             <Grid container spacing={0} className='second'>
                 <Grid item className='right' lg={6} md={6} sm={12} xs={12}>
@@ -141,7 +145,8 @@ const Home = () => {
 
                 </Grid>
 
-            </Grid><Grid container spacing={0} className='forth'>
+            </Grid>
+            <Grid container spacing={0} className='forth'>
                 <Grid item className='fright' lg={9} md={9} sm={12} xs={12}>
 
                 </Grid>
@@ -153,6 +158,32 @@ const Home = () => {
                 </Grid>
 
             </Grid>
+
+            <div className='featured'>
+                <h1 className='pl-8 mt-8 '>Our Blogs</h1>
+                <hr className='ml-8 mt-2 ' />
+                <Grid container spacing={2} className=''>
+                    {products.map((product, index) => (
+                        <Grid item lg={3} md={4} sm={6} xs={6} className='justify-center flex'>
+                            <div class="bg-zinc-900 shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 my-8 ">
+                                <a href="#">
+                                    <img class="rounded-t-lg max-w-full" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" />
+                                </a>
+                                <div class="p-5">
+                                    <a href="#">
+                                        <h5 class="text-gray-300 font-bold text-2xl tracking-tight mb-2">Noteworthy technology acquisitions 2021</h5>
+                                    </a>
+                                    <p class="font-normal text-gray-200 mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                                    <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="#">
+                                        Read more
+                                    </a>
+                                </div>
+                            </div>
+                        </Grid>
+                    ))}
+
+                </Grid>
+            </div>
 
             <Footer />
         </>

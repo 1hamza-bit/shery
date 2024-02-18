@@ -53,11 +53,30 @@ hr{
 .card{
     margin: 8%;
     /* margin-left: 2%; */
-    background-color: rgba(7, 7, 10, 0.0) !important;
+    background-color: rgba(7, 7, 10, 0.1) !important;
     color: antiquewhite !important;
-    min-height: 400px;
-    max-height: 420px;
+    min-height: 450px;
+    max-height: 480px;
     overflow: hidden;
+    .content{
+        padding: 3%;
+        overflow-y: scroll;
+        height: 30px;
+        padding-top: 0% !important;
+        ::-webkit-scrollbar{
+            display: none !important;
+            width: 0px !important;
+        }
+    }
+    .img{
+        height: 300px;
+        align-items: center;
+        display: flex;
+        background-color: rgb(37, 36, 36);
+    }
+    button{
+        background-color: black;
+    }
 }
 .card div  {
     color: wheat;
@@ -72,7 +91,7 @@ hr{
     monospace;
 }
 .card img {
-    height: 200px;
+    height: auto;
 }
 
 .third {
