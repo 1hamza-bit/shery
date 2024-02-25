@@ -86,7 +86,7 @@ export default function SignInSide() {
             Contact Information
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-            <Stack direction="row" className='stack'><p><LocalPhoneIcon color="disabled" sx={{ fontSize: 40, marginTop: "10px", color: "rgb(18 206 161)" }} /> </p> <p>03224594593</p></Stack>
+            <Stack direction="row" className='stack'><p><LocalPhoneIcon color="disabled" sx={{ fontSize: 40, marginTop: "10px", color: "rgb(18 206 161)" }} /> </p> <p>03224594593 {"  "}</p></Stack>
             <Stack direction="row" className='stack'><p><EmailIcon color="disabled" sx={{ fontSize: 40, marginTop: "10px", color: "rgb(18 206 161)" }}/> </p> <p>Shaharyartrading@gmail.com</p></Stack>
 
               {/* <FormControlLabel
