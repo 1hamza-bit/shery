@@ -38,12 +38,13 @@ border-radius: 25%;
     0 0 70px #0ff,
     0 0 110px rgb(255, 136, 0),
     0 0 140px #0ff;
-}
+} 
 
 .info {
      background: linear-gradient(175deg, rgba(14, 25, 61, 0.5) 0%, rgba(26, 39, 58, 0.2) 50%, rgba(53, 69, 88, 0.2) 100%);
   .stack{
     justify-content: space-between;
+    font-family: none;
     font-size: 35px;
     width: 280px;
     align-items: center;

@@ -16,34 +16,32 @@ const Home = () => {
 
     const products = [
         {
-            title: 'Rubber Hose 1',
-            category: 'Industrial Rubber Hoses',
-            description: "Introducing our star performers – the epitome of reliability and versatility in rubber hoses. Engineered for durability and flexibility, our most popular products deliver unmatched performance across various applications. From heavy-duty industrial use to everyday tasks.",
+            title: 'Hydraulic Hose',
+            category: 'Hydraulic Hoses',
+            description: "Our hydraulic hoses are designed to withstand high pressures and deliver exceptional performance. Available in various sizes to suit your needs, these hoses are engineered for reliability and durability in hydraulic systems.",
             image: green,
-            tag: "Rubber hose"
+            tag: "Hydraulic hose"
         },
         {
-            title: 'Rubber Hose 2',
-            category: 'Commercial Rubber Hoses',
-            description: "Introducing our star performers – the epitome of reliability and versatility in rubber hoses. Engineered for durability and flexibility, our most popular products deliver unmatched performance across various applications. From heavy-duty industrial use to everyday tasks.",
-
-            image: hydraulic,
-            tag: "Rubber hose"
+            title: 'Suction Hose',
+            category: 'Suction Hoses',
+            description: "Need a reliable solution for suction applications? Look no further than our suction hoses. Available in different sizes and configurations, these hoses offer powerful suction capabilities for various industrial and commercial uses.",
+            image: fire,
+            tag: "Suction hose"
         },
         {
-            title: 'Rubber Hose 3',
-            category: 'Specialty Rubber Hoses',
-            description: "Introducing our star performers – the epitome of reliability and versatility in rubber hoses. Engineered for durability and flexibility, our most popular products deliver unmatched performance across various applications. From heavy-duty industrial use to everyday tasks.",
-            image: green,
-            tag: "Rubber hose"
+            title: 'Pressure Pipe',
+            category: 'High-Pressure Pipes',
+            description: "Experience unmatched strength and resilience with our high-pressure pipes. Built to withstand extreme pressure levels, these pipes are available in a range of sizes to meet your specific requirements. Trust in their durability for your toughest applications.",
+            image: gas,
+            tag: "Pressure pipe"
         },
-
         {
-            title: 'Rubber Hose 3',
-            category: 'Specialty Rubber Hoses',
-            description: "Introducing our star performers – the epitome of reliability and versatility in rubber hoses. Engineered for durability and flexibility, our most popular products deliver unmatched performance across various applications. From heavy-duty industrial use to everyday tasks.",
-            image: green,
-            tag: "Rubber hose"
+            title: 'Fire Hose',
+            category: 'Firefighting Hoses',
+            description: "When it comes to firefighting, reliability is paramount. Our fire hoses are engineered to deliver under pressure when it matters most. Available in different sizes and configurations, these hoses provide the strength and flexibility needed for effective firefighting operations.",
+            image:  hydraulic,
+            tag: "Fire hose"
         }
     ];
 

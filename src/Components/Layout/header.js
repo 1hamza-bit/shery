@@ -5,6 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AdbIcon from '@mui/icons-material/Adb';
 import './index.css'
 import { Link } from "react-router-dom";
+import { DataSaverOff } from "@mui/icons-material";
 
 const pages = ['Products', 'Contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -34,7 +35,7 @@ const Header = () => {
         <AppBar position="static" className="header">
       <Container  fullWidth>
         <Toolbar disableGutters className="toolbar">
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <DataSaverOff sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -50,7 +51,7 @@ const Header = () => {
               textDecoration: 'none',
             }}
           >
-          <Link to='/'>Shaharyar Traders</Link>  
+          <Link to='/'>Shahzad Trading</Link>  
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

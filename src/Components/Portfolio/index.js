@@ -238,7 +238,7 @@ const Projects = () => {
                   these hoses are crafted to withstand the toughest conditions while ensuring optimal functionality.
                   Trust in the quality that sets the standard –
                   explore our top-rated rubber hoses today and experience durability like never before.</p>
-                  <Button className=''>Send Inquiry</Button>
+                  <Button className=''><a href={`mailto:${"hamtah112@gmail.com"}`} >Send Inquiry</a></Button>
               </Grid>
               <Grid item lg={5} md={5} sm={12} sx={12} className=''>
                 <ProductSlider products={products} />
