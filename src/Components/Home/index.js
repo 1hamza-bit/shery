@@ -8,42 +8,60 @@ import hydraulic from '../../Assets/hydraulic.png'
 import fire from '../../Assets/fire.png'
 import gas from '../../Assets/gas.png'
 import canvas from '../../Assets/canvas.png'
+import React, { useState } from 'react';
 
-const { Grid, Typography, Divider, Button, Card, CardActionArea, CardMedia, CardContent } = require("@mui/material");
+const { Grid, Typography, Divider, Button, Card, CardActionArea, CardMedia, CardContent, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Slide } = require("@mui/material");
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+});
+
+const products = [
+    {
+        title: 'Hydraulic Hose',
+        category: 'Hydraulic Hoses',
+        description: "Our hydraulic hoses are designed to withstand high pressures and deliver exceptional performance. Available in various sizes to suit your needs, these hoses are engineered for reliability and durability in hydraulic systems.",
+        image: green,
+        tag: "Hydraulic hose"
+    },
+    {
+        title: 'Suction Hose',
+        category: 'Suction Hoses',
+        description: "Need a reliable solution for suction applications? Look no further than our suction hoses. Available in different sizes and configurations, these hoses offer powerful suction capabilities for various industrial and commercial uses.",
+        image: fire,
+        tag: "Suction hose"
+    },
+    {
+        title: 'Pressure Pipe',
+        category: 'High-Pressure Pipes',
+        description: "Experience unmatched strength and resilience with our high-pressure pipes. Built to withstand extreme pressure levels, these pipes are available in a range of sizes to meet your specific requirements. Trust in their durability for your toughest applications.",
+        image: gas,
+        tag: "Pressure pipe"
+    },
+    {
+        title: 'Fire Hose',
+        category: 'Firefighting Hoses',
+        description: "When it comes to firefighting, reliability is paramount. Our fire hoses are engineered to deliver under pressure when it matters most. Available in different sizes and configurations, these hoses provide the strength and flexibility needed for effective firefighting operations.",
+        image: hydraulic,
+        tag: "Fire hose"
+    }
+];
 
 const Home = () => {
+    const [openDialog, setOpenDialog] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState(null);
 
+    const handleClickOpen = (index) => {
+        setOpenDialog(true)
+        setSelectedProduct(index);
+    };
 
-    const products = [
-        {
-            title: 'Hydraulic Hose',
-            category: 'Hydraulic Hoses',
-            description: "Our hydraulic hoses are designed to withstand high pressures and deliver exceptional performance. Available in various sizes to suit your needs, these hoses are engineered for reliability and durability in hydraulic systems.",
-            image: green,
-            tag: "Hydraulic hose"
-        },
-        {
-            title: 'Suction Hose',
-            category: 'Suction Hoses',
-            description: "Need a reliable solution for suction applications? Look no further than our suction hoses. Available in different sizes and configurations, these hoses offer powerful suction capabilities for various industrial and commercial uses.",
-            image: fire,
-            tag: "Suction hose"
-        },
-        {
-            title: 'Pressure Pipe',
-            category: 'High-Pressure Pipes',
-            description: "Experience unmatched strength and resilience with our high-pressure pipes. Built to withstand extreme pressure levels, these pipes are available in a range of sizes to meet your specific requirements. Trust in their durability for your toughest applications.",
-            image: gas,
-            tag: "Pressure pipe"
-        },
-        {
-            title: 'Fire Hose',
-            category: 'Firefighting Hoses',
-            description: "When it comes to firefighting, reliability is paramount. Our fire hoses are engineered to deliver under pressure when it matters most. Available in different sizes and configurations, these hoses provide the strength and flexibility needed for effective firefighting operations.",
-            image:  hydraulic,
-            tag: "Fire hose"
-        }
-    ];
+    const handleClose = () => {
+        setOpenDialog(false);
+        setSelectedProduct(null);
+    };
+
+   
 
     return (
         <>
@@ -57,11 +75,11 @@ const Home = () => {
 
                     <Grid className='overmain' item lg={6} md={6} sm={12} xs={12}>
                         <div className='w70p'>
-                            <h1>Shaharyar Trading</h1>
+                            <h1>Shahzad Trading Company</h1>
                             <div style={{ textAlign: 'center' }}>
                                 <Divider className='divider' />
                             </div>
-                            <p>A hydraulic hose trading company, such as Shaharyar Trading, specializes in supplying high-quality hydraulic hoses
+                            <p>A hydraulic hose trading company, such as Shahzad Trading Company, specializes in supplying high-quality hydraulic hoses
                                 and components for various industries. With a focus on reliability and performance, they cater
                                 to diverse sectors and prioritize customer satisfaction through a comprehensive product catalog and efficient services. </p>
                             <Button variant='contained' className='bgmain'><Link to="/products"> Products </Link> </Button>
@@ -81,27 +99,44 @@ const Home = () => {
                     {products.map((product, index) => (
                         <Grid item lg={3} md={4} sm={6} xs={6}>
                             <Card className='card' sx={{ maxWidth: 345 }}>
-                                
-                                    <div className='img'>
+
+                                <div className='img'>
                                     <CardMedia
                                         component="img"
                                         height="240"
                                         image={product.image}
                                         alt="green iguana"
                                     />
-                                    </div>
-                                    <CardContent >
-                                        <Typography gutterBottom variant="h5" component="div">
-                                            {product.title}
-                                        </Typography>
-                                        <Typography className='content' variant="body2" color="text.secondary">
-                                            {product.description}
-                                        </Typography>
-                                    </CardContent>
-                                    <CardActionArea>
-                                        <Button variant='contained'  fullWidth>See more</Button>
+                                </div>
+                                <CardContent >
+                                    <Typography gutterBottom variant="h5" component="div">
+                                        {product.title}
+                                    </Typography>
+                                    <Typography className='content' variant="body2" color="text.secondary">
+                                        {product.description}
+                                    </Typography>
+                                </CardContent>
+                                <CardActionArea>
+                                    <Button variant='contained' onClick={()=>handleClickOpen(product)} fullWidth>See more</Button>
                                 </CardActionArea>
                             </Card>
+                            <Dialog
+                        open={openDialog}
+                        TransitionComponent={Transition}
+                        onClose={handleClose}
+                        className='productmodal'
+                        aria-describedby="alert-dialog-slide-description"
+                    >
+                        <DialogTitle>{selectedProduct?.title} details</DialogTitle>
+                        <DialogContent>
+                            <DialogContentText id="alert-dialog-slide-description">
+                                <p>{selectedProduct?.description}</p>
+                            </DialogContentText>
+                        </DialogContent>
+                        <DialogActions>
+                            <Button onClick={handleClose}>Close</Button>
+                        </DialogActions>
+                    </Dialog>
                         </Grid>
                     ))}
 

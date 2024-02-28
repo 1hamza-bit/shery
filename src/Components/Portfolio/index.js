@@ -36,7 +36,7 @@ const projectData = [
     title: 'Project 2',
     category: 'UI/UX Design',
     description: "Introducing our star performers – the epitome of reliability and versatility in rubber hoses Engineered for durability and flexibility our most popular products deliver unmatched performance across various applications. From heavy-duty industrial use to everyday tasks"
- 
+
     // image: 'https://daubnerusa.com/wp-content/uploads/2021/04/4129.jpg',
     // tag: "Hydraulic hose"
   },
@@ -227,7 +227,7 @@ const Projects = () => {
       <section id="projects" className={styles.projects}>
         <div className={styles.overlay}>
           <div className={`${styles.secondoverlay} `}>
-          <Header />
+            <Header />
 
             <Grid container spacing={2} className='mt5p'>
               <Grid item lg={5} md={5} sm={12} sx={12} className={styles.inquiry}>
@@ -238,7 +238,7 @@ const Projects = () => {
                   these hoses are crafted to withstand the toughest conditions while ensuring optimal functionality.
                   Trust in the quality that sets the standard –
                   explore our top-rated rubber hoses today and experience durability like never before.</p>
-                  <Button className=''><a href={`mailto:${"hamtah112@gmail.com"}`} >Send Inquiry</a></Button>
+                <Button className=''><a href={`mailto:${"hamtah112@gmail.com"}`} >Send Inquiry</a></Button>
               </Grid>
               <Grid item lg={5} md={5} sm={12} sx={12} className=''>
                 <ProductSlider products={products} />
@@ -268,7 +268,7 @@ const Projects = () => {
               {tags.map((tag, index) => (
                 <Button
                   key={index}
-                  className={`${styles.tag} ${tag === selectedTag ? styles.active: ""}`}
+                  className={`${styles.tag} ${tag === selectedTag ? styles.active : ""}`}
                   onClick={() => handleTagClick(tag)}
                 >
                   <span>{tag}</span>
@@ -290,8 +290,8 @@ const Projects = () => {
            transition={{ duration: 0.9 }}
          > */}
                     <div key={index} className={`${styles['project-card']} ${!project.image ? styles.red : ''}`}>
-                    {project.image ? <div className={styles['project-image']}>
-                         <img src={project.image} alt={project.title} /> 
+                      {project.image ? <div className={styles['project-image']}>
+                        <img src={project.image} alt={project.title} />
                       </div> : null}
                       <div className={styles['project-details']}>
                         <h3>{project.title}</h3>
@@ -300,6 +300,7 @@ const Projects = () => {
                       </div>
                     </div>
                     {/* </motion.div> */}
+                
                   </Grid>
 
                 ))}

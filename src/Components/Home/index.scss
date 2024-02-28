@@ -136,6 +136,16 @@ hr{
 
 }
 
+.productmodal{
+    .MuiDialog-paper{
+    background-color: rgb(34, 35, 36) !important;
+    color: white !important;
+    p{
+        color: rgb(172, 164, 148);
+    }
+    }
+}
+
 
 @media screen and (max-width:880px) {
    .second, .third, .forth{

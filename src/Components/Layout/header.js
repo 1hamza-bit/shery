@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Dialog, DialogContent, Grid, TextField } from "@mui/material";
 import * as React from 'react'; 
 import { AppBar, Box, Toolbar, IconButton, Typography, Menu, MenuItem, Container, Avatar, Button, Tooltip } from '@mui/material'; 
 import MenuIcon from '@mui/icons-material/Menu'; 
@@ -13,6 +13,17 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const Header = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
+    const [open, setOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    // Open the dialog when component mounts
+    setOpen(true);
+
+    // Clean up function to close the dialog when component unmounts
+    return () => {
+      setOpen(false);
+    };
+  }, []);
   
     const handleOpenNavMenu = (event) => {
       setAnchorElNav(event.currentTarget);
@@ -107,7 +118,7 @@ const Header = () => {
               textDecoration: 'none',
             }}
           >
-            <Link to='/'>Shaharyar Traders</Link>  
+            <Link to='/'>Shahzad Traders</Link>  
           </Typography>
           <Box sx={{ flexGrow: 1, justifyContent: "end", display: { xs: 'none', md: 'flex' } }}>
           
@@ -129,35 +140,41 @@ const Header = () => {
        
           </Box>
 
-          {/* <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box> */}
+          <Dialog open={open} onClose={() => setOpen(false)} maxWidth="md" className="bg-grey">
+      <DialogContent className="bg-grey">
+        <Grid container spacing={2} sx={{ height: '400px' }}>
+          {/* Image Slideshow */}
+          <Grid item xs={6} sx={{ overflow: 'hidden' }}>
+            {/* Add your image slideshow component here */}
+            <img
+              src="https://via.placeholder.com/500x400"
+              alt="Slideshow"
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+          </Grid>
+
+          {/* Sign-up Form */}
+          <Grid item xs={6} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <Typography variant="h6" gutterBottom>
+              Sign in to our website to get emails about our fresh hydraulic hose stocklots
+            </Typography>
+            <form>
+              <TextField
+                label="Enter your email"
+                variant="outlined"
+                margin="normal"
+                fullWidth
+                required
+                // Add your email state and onChange handler here
+              />
+              <Button variant="contained" color="primary" type="submit">
+                Subscribe
+              </Button>
+            </form>
+          </Grid>
+        </Grid>
+      </DialogContent>
+    </Dialog>
         </Toolbar>
       </Container>
     </AppBar>
