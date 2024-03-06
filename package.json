@@ -24,7 +24,7 @@
   },
   "scripts": {
     "staging": "set /p secret=Enter deployment secret word for production: && if \"%secret%\" == \"%DEPLOYMENT_KEY%\" vercel ",
-    "production": "set /p secret=Enter deployment secret word for production: && if \"%secret%\" == \"%DEPLOYMENT_KEY%\" vercel --prod",
+    "production": "set /p secret=Enter deployment secret word for production: && if \"%secret%\" == \"%DEPLOYMENT_KEY%\" (vercel --prod) else (echo Incorrect secret word!)",
         "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
