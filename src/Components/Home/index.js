@@ -125,11 +125,11 @@ const Home = () => {
                         TransitionComponent={Transition}
                         onClose={handleClose}
                         className='productmodal'
-                        aria-describedby="alert-dialog-slide-description"
+                        aria-describedby="product detail modal"
                     >
                         <DialogTitle>{selectedProduct?.title} details</DialogTitle>
                         <DialogContent>
-                            <DialogContentText id="alert-dialog-slide-description">
+                            <DialogContentText id="product detail modal-description">
                                 <p>{selectedProduct?.description}</p>
                             </DialogContentText>
                         </DialogContent>
@@ -200,7 +200,7 @@ const Home = () => {
                         <Grid item lg={3} md={4} sm={6} xs={6} className='justify-center flex'>
                             <div class="bg-zinc-900 shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 my-8 ">
                                 <a href="#">
-                                    <img class="rounded-t-lg max-w-full" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" />
+                                    <img class="rounded-t-lg max-w-full" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" width={"auto"} height={300} />
                                 </a>
                                 <div class="p-5">
                                     <a href="#">
