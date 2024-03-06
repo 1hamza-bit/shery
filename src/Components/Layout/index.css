@@ -35,3 +35,13 @@
     background-color: black;
     color: antiquewhite;
 }
+
+.productmodal{
+    .MuiDialog-paper{
+    background-color: rgb(34, 35, 36) !important;
+    color: white !important;
+    p{
+        color: rgb(172, 164, 148);
+    }
+    }
+}
