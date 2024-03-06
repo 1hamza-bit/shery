@@ -9,7 +9,7 @@ const urls = [
 ];
 
 const sitemap = Sitemap.createSitemap({
-  hostname: 'https://shahzadtradingcompany.com',
+  hostname: 'http://localhost:3000', // Change to your local development URL
   urls,
 });
 
