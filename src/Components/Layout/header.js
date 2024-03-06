@@ -6,6 +6,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import './index.css'
 import { Link } from "react-router-dom";
 import { DataSaverOff } from "@mui/icons-material";
+import shop from "../../Assets/shophose.jpg"
 
 const pages = ['Products', 'Contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -140,14 +141,14 @@ const Header = () => {
        
           </Box>
 
-          <Dialog open={open} onClose={() => setOpen(false)} maxWidth="md" className="bg-grey">
+          <Dialog open={open} onClose={() => setOpen(false)} maxWidth="md" className="bg-grey productmodal">
       <DialogContent className="bg-grey">
         <Grid container spacing={2} sx={{ height: '400px' }}>
           {/* Image Slideshow */}
           <Grid item xs={6} sx={{ overflow: 'hidden' }}>
             {/* Add your image slideshow component here */}
             <img
-              src="https://via.placeholder.com/500x400"
+              src={shop}
               alt="Slideshow"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
