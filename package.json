@@ -20,12 +20,13 @@
     "sass": "^1.70.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.1",
+    "vercel": "^33.5.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "staging": "set /p secret=Enter deployment secret word for production: && if \"%secret%\" == \"%DEPLOYMENT_KEY%\" vercel ",
     "production": "set /p secret=Enter deployment secret word for production: && if \"%secret%\" == \"%DEPLOYMENT_KEY%\" (vercel --prod) else (echo Incorrect secret word!)",
-        "start": "react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
