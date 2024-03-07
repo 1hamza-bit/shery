@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-
+overflow-x: hidden;
   // min-width: 100%;
   .overlay {
     backdrop-filter: blur(20px);
@@ -170,6 +170,7 @@
   border: none !important;
   margin-left: 3% !important;
   background-color: transparent;
+  width: fit-content;
 
 }
 
@@ -198,6 +199,14 @@ input:focus {
 
 
 @media screen and (max-width:880px) {
+
+  .slick-slider{
+    width: fit-content !important;
+  }
+
+  .search{
+    width: 70% !important;
+  }
 
   .red {
     display: none !important;

@@ -97,7 +97,7 @@ const Home = () => {
                 <hr className='ml-8 mt-2 ' />
                 <Grid container spacing={0} className='second'>
                     {products.map((product, index) => (
-                        <Grid item lg={3} md={4} sm={6} xs={6}>
+                        <Grid item lg={3} md={4} sm={12} xs={12}>
                             <Card className='card' sx={{ maxWidth: 345 }}>
 
                                 <div className='img'>
@@ -197,7 +197,7 @@ const Home = () => {
                 <hr className='ml-8 mt-2 ' />
                 <Grid container spacing={2} className=''>
                     {products.map((product, index) => (
-                        <Grid item lg={3} md={4} sm={6} xs={6} className='justify-center flex'>
+                        <Grid item lg={3} md={4} sm={12} xs={12} className='justify-center flex'>
                             <div class="bg-zinc-900 shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 my-8 ">
                                 <a href="#">
                                     <img class="rounded-t-lg max-w-full" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" width={"auto"} height={300} />
