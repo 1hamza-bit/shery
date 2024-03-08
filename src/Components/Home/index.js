@@ -9,6 +9,7 @@ import fire from '../../Assets/fire.png'
 import gas from '../../Assets/gas.png'
 import canvas from '../../Assets/canvas.png'
 import React, { useState } from 'react';
+import { ArrowLeft, ArrowRight } from '@mui/icons-material';
 
 const { Grid, Typography, Divider, Button, Card, CardActionArea, CardMedia, CardContent, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Slide } = require("@mui/material");
 
@@ -82,7 +83,7 @@ const Home = () => {
                             <p>A hydraulic hose trading company, such as Shahzad Trading Company, specializes in supplying high-quality hydraulic hoses
                                 and components for various industries. With a focus on reliability and performance, they cater
                                 to diverse sectors and prioritize customer satisfaction through a comprehensive product catalog and efficient services. </p>
-                            <Button variant='contained' className='bgmain'><Link to="/products"> Products </Link> </Button>
+                            <Button variant='contained' className='bgmain productbutton'><Link to="/products"> Products <ArrowRight /></Link> </Button>
                         </div>
                     </Grid>
                     <Grid item lg={6} md={6} sm={12} xs={12}>
@@ -166,7 +167,7 @@ const Home = () => {
                 </Grid>
 
             </Grid>
-            <Grid container spacing={0} className='third'>
+            {/* <Grid container spacing={0} className='third'>
                 <Grid item className='tright' lg={3} md={3} sm={12} xs={12}>
                     <h2 className='pt17p'>Stocklot hose</h2>
                     <Divider />
@@ -190,12 +191,12 @@ const Home = () => {
                         This term is often used to emphasize that the hose is in brand-new condition and has not undergone any wear or damage. </Typography>
                 </Grid>
 
-            </Grid>
+            </Grid> */}
 
             <div className='featured'>
                 <h1 className='pl-8 mt-8 '>Our Blogs</h1>
                 <hr className='ml-8 mt-2 ' />
-                <Grid container spacing={2} className=''>
+                <Grid container spacing={3} className='p-8' >
                     {products.map((product, index) => (
                         <Grid item lg={3} md={4} sm={12} xs={12} className='justify-center flex'>
                             <div class="bg-zinc-900 shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 my-8 ">

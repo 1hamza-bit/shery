@@ -3,8 +3,8 @@ import * as React from 'react';
 import { AppBar, Box, Toolbar, IconButton, Typography, Menu, MenuItem, Container, Avatar, Button, Tooltip } from '@mui/material'; 
 import MenuIcon from '@mui/icons-material/Menu'; 
 import AdbIcon from '@mui/icons-material/Adb';
-import './index.css'
-import { Link } from "react-router-dom";
+import './index.scss'
+import { Link, useNavigate } from "react-router-dom";
 import { DataSaverOff } from "@mui/icons-material";
 import shop from "../../Assets/shophose.jpg"
 
@@ -14,7 +14,11 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const Header = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
-   
+    const navigate = useNavigate();
+
+   const handleNavigate=(page) => {
+    navigate(page);
+    }
   
     const handleOpenNavMenu = (event) => {
       setAnchorElNav(event.currentTarget);
@@ -87,7 +91,7 @@ const Header = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center"><Link className={`navitem ${window.location.pathname === page ? 'active' : ''}`} to={"/" + page.toLowerCase()}>{page}</Link></Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -115,18 +119,18 @@ const Header = () => {
           
               <Button
                 // key={page}
-                onClick={handleCloseNavMenu}
+                onClick={()=>handleNavigate("/products")}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-               <Link to="/products"> Products </Link>
+            <Link className={`navitem ${window.location.pathname === '/products' ? 'active' : ''}`}>Products</Link>   
               </Button>
 
               <Button
                 // key={page}
-                onClick={handleCloseNavMenu}
+                onClick={()=>handleNavigate("/contact")}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-               <Link to="/contact"> Contact </Link>
+               <Link className={`navitem ${window.location.pathname === '/contact' ? 'active' : ''}`} > Contact </Link>
               </Button>
        
           </Box>
