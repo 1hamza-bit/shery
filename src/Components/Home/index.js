@@ -76,13 +76,12 @@ const Home = () => {
 
                     <Grid className='overmain' item lg={6} md={6} sm={12} xs={12}>
                         <div className='w70p'>
-                            <h1>Shahzad Trading Company</h1>
+                            <h1>Shaharyar Traders</h1>
                             <div style={{ textAlign: 'center' }}>
                                 <Divider className='divider' />
                             </div>
-                            <p>A hydraulic hose trading company, such as Shahzad Trading Company, specializes in supplying high-quality hydraulic hoses
-                                and components for various industries. With a focus on reliability and performance, they cater
-                                to diverse sectors and prioritize customer satisfaction through a comprehensive product catalog and efficient services. </p>
+                            <p>A hydraulic hose trading company, "Shaharyar Traders, formerly known as Shahzad Trading, 
+                                continues the legacy and expertise established by its predecessor, offering the same trusted services and quality products under a new name." </p>
                             <Button variant='contained' className='bgmain productbutton'><Link to="/products"> Products <ArrowRight /></Link> </Button>
                         </div>
                     </Grid>

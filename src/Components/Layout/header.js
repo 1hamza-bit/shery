@@ -57,7 +57,7 @@ const Header = () => {
               textDecoration: 'none',
             }}
           >
-          <Link to='/'>Shahzad Trading</Link>  
+          <Link to='/'>Shaharyar Traders</Link>  
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

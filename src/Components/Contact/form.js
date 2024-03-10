@@ -102,12 +102,21 @@ export default function SignInSide() {
             sx={{
               my: 8,
               mx: 4,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
+              // display: 'flex',
+              // flexDirection: 'column',
+              // alignItems: 'center',
             }}
           >
-
+            <Typography variant='h2' mt={3}>Call us</Typography>
+            <p>Do you have any inquiry or need some information feel free to Call us</p>
+            <p className='flex align-center p-1 phone'><LocalPhoneIcon /> : 03224594593</p>
+            
+            <Typography variant='h2' mt={3}>Send Email</Typography>
+            <p>Do you have any inquiry or need some information feel free to Send us an Email</p>
+            <p className='flex align-center p-1 phone'><EmailIcon /> : hamtah112@gmail.com</p>
+            <Typography variant='h2' mt={4}>Track Us</Typography>
+            <p>If you wish to visit our Shop in Lahore  head to our headquaters</p>
+            <p className='flex align-center p-1 phone'><LocationOnIcon /> : 26 nishtar road Lahore</p>
           </Box>
         </Grid>
       </Grid>

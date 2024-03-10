@@ -17,8 +17,7 @@ const Footer = () => {
                             <Divider className='divider' />
                         </div>
                         <p>A hydraulic hose trading company, such as Shaharyar Trading, specializes in supplying high-quality hydraulic hoses
-                            and components for various industries. With a focus on reliability and performance, they cater
-                            to diverse sectors and prioritize customer satisfaction through a comprehensive product catalog and efficient services. </p>
+                            and components for various industries. </p>
                         {/* <Button variant='contained' className='bgmain'> Products </Button> */}
                     </div>
             </Grid>

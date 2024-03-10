@@ -17,6 +17,7 @@
 h1{
     color: antiquewhite;
     font-size: 29px;
+    
 }
 hr{
     color: antiquewhite;
@@ -35,6 +36,13 @@ hr{
     /* height: 100%; */
     /* background-color: rgba(0,0,0,0.2); */
     /*box-shadow: 0px 2px 4px -1px rgba(211, 205, 205, 0.226), 0px 4px 5px 0px rgba(230, 222, 222, 0.219), 0px 1px 10px 0px rgba(59, 58, 58, 0.26) !important; */
+    h1{
+        font-family: "Heading", Helvetica, sans-serif !important; 
+        text-transform: uppercase;
+    }
+    p{
+        font-size: 22px;
+    }
     .productbutton{
         display: flex;
         align-items: center;
