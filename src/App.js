@@ -9,7 +9,6 @@ import React from 'react';
 import { Button, Dialog, DialogContent, Grid, TextField, Typography } from '@mui/material';
 import shop from "./Assets/shophose.jpg"
 import { Helmet } from 'react-helmet';
-import logo from "../public/favicon.png"
 
 function App() {
   const [open, setOpen] = React.useState(false);

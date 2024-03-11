@@ -204,9 +204,9 @@ const Home = () => {
                                 </a>
                                 <div class="p-5">
                                     <a href="#">
-                                        <h5 class="text-gray-300 font-bold text-2xl tracking-tight mb-2">Noteworthy technology acquisitions 2021</h5>
+                                        <h5 class="text-gray-300 font-bold text-2xl tracking-tight mb-2">Pakistan's top hydraulic hopse supplier </h5>
                                     </a>
-                                    <p class="font-normal text-gray-200 mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                                    <p class="font-normal text-gray-200 mb-3">Here are the biggest hose stockist of Pakistan so far.</p>
                                     <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="#">
                                         Read more
                                     </a>
