@@ -39,7 +39,7 @@ function App() {
          <meta charSet="UTF-8" />
         <meta name="description" content="Supplier of hydraulic hoses, fittings, and accessories. Find high-quality hydraulic hoses for industrial applications. We offer hydraulic hose assembly services." />
         <meta name="keywords" content="Top hydraulic hose supplier in Pakistan, hydraulic hoses, hydraulic hose fittings, hydraulic hose assembly, hydraulic hose supplier, hydraulic hose manufacturer, hydraulic hose repair, hydraulic hose types, hydraulic hose specifications, hydraulic hose sizes, hydraulic hose pressure rating" />
-        <meta name="author" content="Your Name" />
+        <meta name="author" content="Hamza Tahir" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Shahzad Trading Company - Hydraulic Hoses Supplier</title>
       </Helmet>
