@@ -8,6 +8,8 @@ import Sitemap from './Components/Sitemap';
 import React from 'react';
 import { Button, Dialog, DialogContent, Grid, TextField, Typography } from '@mui/material';
 import shop from "./Assets/shophose.jpg"
+import { Helmet } from 'react-helmet';
+import logo from "../public/favicon.png"
 
 function App() {
   const [open, setOpen] = React.useState(false);
@@ -25,6 +27,23 @@ function App() {
 
   return (
     <div className="App">
+       <Helmet>
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "url": "https://shahzadtradingcompany.com",
+            "logo": "%PUBLIC_URL%/favicon.png"
+          }
+          
+        `}</script>
+         <meta charSet="UTF-8" />
+        <meta name="description" content="Supplier of hydraulic hoses, fittings, and accessories. Find high-quality hydraulic hoses for industrial applications. We offer hydraulic hose assembly services." />
+        <meta name="keywords" content="Top hydraulic hose supplier in Pakistan, hydraulic hoses, hydraulic hose fittings, hydraulic hose assembly, hydraulic hose supplier, hydraulic hose manufacturer, hydraulic hose repair, hydraulic hose types, hydraulic hose specifications, hydraulic hose sizes, hydraulic hose pressure rating" />
+        <meta name="author" content="Your Name" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Shahzad Trading Company - Hydraulic Hoses Supplier</title>
+      </Helmet>
       <header className="App-header">
       <Router>    
       <Routes>
