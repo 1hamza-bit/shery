@@ -3,6 +3,13 @@
     /* margin-top: 1% !important; */
     background-color: rgb(231, 208, 179) !important;
     color: black !important;
+    .navitem{
+        font-size: 15px !important;
+        font-weight: 600;
+    }
+    .active{
+        border-bottom: 1px solid black;
+    }
 }
 
 .header button{
@@ -15,6 +22,7 @@
 
 .header a {
     font-size: 18px;
+   
 }
 
 .header .toolbar{
@@ -29,6 +37,15 @@
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     margin-top: 0% !important;
     font-size: larger;
+    a{
+        font-size: 20px;
+    }
+    p{
+        font-size: 19px;
+    }
+    button{
+        color: black !important;
+    }
 }
 
 .underfooter{

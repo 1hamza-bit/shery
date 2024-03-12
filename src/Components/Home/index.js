@@ -9,6 +9,7 @@ import fire from '../../Assets/fire.png'
 import gas from '../../Assets/gas.png'
 import canvas from '../../Assets/canvas.png'
 import React, { useState } from 'react';
+import { ArrowLeft, ArrowRight } from '@mui/icons-material';
 
 const { Grid, Typography, Divider, Button, Card, CardActionArea, CardMedia, CardContent, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Slide } = require("@mui/material");
 
@@ -61,7 +62,7 @@ const Home = () => {
         setSelectedProduct(null);
     };
 
-   
+
 
     return (
         <>
@@ -75,14 +76,13 @@ const Home = () => {
 
                     <Grid className='overmain' item lg={6} md={6} sm={12} xs={12}>
                         <div className='w70p'>
-                            <h1>Shahzad Trading Company</h1>
+                            <h1>Shaharyar Traders</h1>
                             <div style={{ textAlign: 'center' }}>
                                 <Divider className='divider' />
                             </div>
-                            <p>A hydraulic hose trading company, such as Shahzad Trading Company, specializes in supplying high-quality hydraulic hoses
-                                and components for various industries. With a focus on reliability and performance, they cater
-                                to diverse sectors and prioritize customer satisfaction through a comprehensive product catalog and efficient services. </p>
-                            <Button variant='contained' className='bgmain'><Link to="/products"> Products </Link> </Button>
+                            <p>A hydraulic hose trading company, "Shaharyar Traders, formerly known as Shahzad Trading,
+                                continues the legacy and expertise established by its predecessor, offering the same trusted services and quality products under a new name." </p>
+                            <Button variant='contained' className='bgmain productbutton'><Link to="/products"> Products <ArrowRight /></Link> </Button>
                         </div>
                     </Grid>
                     <Grid item lg={6} md={6} sm={12} xs={12}>
@@ -92,12 +92,48 @@ const Home = () => {
                 </Grid>
 
             </div>
+
+            <Grid container spacing={2} className='second'>
+                <Grid item lg={6} md={6} sm={12} xs={12}>
+                    <Grid container spacing={1.5} className='boxes'>
+                        <Grid item lg={6} md={6} sm={12} xs={12} >
+                            <div className='box shadow-xl'>
+                            lg
+                            </div>
+                            
+                        </Grid>
+                        <Grid item lg={6} md={6} sm={12} xs={12} >
+                            <div className='box shadow-xl'>
+                            lg
+                            </div>
+                            
+                        </Grid>
+                        <Grid item lg={6} md={6} sm={12} xs={12} >
+                            <div className='box shadow-xl'>
+                            lg
+                            </div>
+                            
+                        </Grid>
+                        <Grid item lg={6} md={6} sm={12} xs={12} >
+                            <div className='box shadow-xl'>
+                            lg
+                            </div>
+                            
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid item lg={6} md={6} sm={12} xs={12}>
+                        <div className='p-20 px-30 text-left'>
+                            <h1>Providing the most reliable Rubber hoses by getting them from the best Manufacturers in the World</h1>
+                        </div>
+                </Grid>
+            </Grid>
             <div className='featured'>
                 <h1 className='pl-8 mt-8 '>Our Most Popular Products</h1>
                 <hr className='ml-8 mt-2 ' />
                 <Grid container spacing={0} className='second'>
                     {products.map((product, index) => (
-                        <Grid item lg={3} md={4} sm={6} xs={6}>
+                        <Grid item lg={3} md={4} sm={12} xs={12}>
                             <Card className='card' sx={{ maxWidth: 345 }}>
 
                                 <div className='img'>
@@ -117,26 +153,26 @@ const Home = () => {
                                     </Typography>
                                 </CardContent>
                                 <CardActionArea>
-                                    <Button variant='contained' onClick={()=>handleClickOpen(product)} fullWidth>See more</Button>
+                                    <Button variant='contained' onClick={() => handleClickOpen(product)} fullWidth>See more</Button>
                                 </CardActionArea>
                             </Card>
                             <Dialog
-                        open={openDialog}
-                        TransitionComponent={Transition}
-                        onClose={handleClose}
-                        className='productmodal'
-                        aria-describedby="product detail modal"
-                    >
-                        <DialogTitle>{selectedProduct?.title} details</DialogTitle>
-                        <DialogContent>
-                            <DialogContentText id="product detail modal-description">
-                                <p>{selectedProduct?.description}</p>
-                            </DialogContentText>
-                        </DialogContent>
-                        <DialogActions>
-                            <Button onClick={handleClose}>Close</Button>
-                        </DialogActions>
-                    </Dialog>
+                                open={openDialog}
+                                TransitionComponent={Transition}
+                                onClose={handleClose}
+                                className='productmodal'
+                                aria-describedby="product detail modal"
+                            >
+                                <DialogTitle>{selectedProduct?.title} details</DialogTitle>
+                                <DialogContent>
+                                    <DialogContentText id="product detail modal-description">
+                                        <p>{selectedProduct?.description}</p>
+                                    </DialogContentText>
+                                </DialogContent>
+                                <DialogActions>
+                                    <Button onClick={handleClose}>Close</Button>
+                                </DialogActions>
+                            </Dialog>
                         </Grid>
                     ))}
 
@@ -166,7 +202,7 @@ const Home = () => {
                 </Grid>
 
             </Grid>
-            <Grid container spacing={0} className='third'>
+            {/* <Grid container spacing={0} className='third'>
                 <Grid item className='tright' lg={3} md={3} sm={12} xs={12}>
                     <h2 className='pt17p'>Stocklot hose</h2>
                     <Divider />
@@ -190,23 +226,23 @@ const Home = () => {
                         This term is often used to emphasize that the hose is in brand-new condition and has not undergone any wear or damage. </Typography>
                 </Grid>
 
-            </Grid>
+            </Grid> */}
 
             <div className='featured'>
                 <h1 className='pl-8 mt-8 '>Our Blogs</h1>
                 <hr className='ml-8 mt-2 ' />
-                <Grid container spacing={2} className=''>
+                <Grid container spacing={3} className='p-8' >
                     {products.map((product, index) => (
-                        <Grid item lg={3} md={4} sm={6} xs={6} className='justify-center flex'>
+                        <Grid item lg={3} md={4} sm={12} xs={12} className='justify-center flex'>
                             <div class="bg-zinc-900 shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 my-8 ">
                                 <a href="#">
                                     <img class="rounded-t-lg max-w-full" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" width={"auto"} height={300} />
                                 </a>
                                 <div class="p-5">
                                     <a href="#">
-                                        <h5 class="text-gray-300 font-bold text-2xl tracking-tight mb-2">Noteworthy technology acquisitions 2021</h5>
+                                        <h5 class="text-gray-300 font-bold text-2xl tracking-tight mb-2">Pakistan's top hydraulic hose supplier </h5>
                                     </a>
-                                    <p class="font-normal text-gray-200 mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                                    <p class="font-normal text-gray-200 mb-3">Here are the biggest hose stockist of Pakistan so far.</p>
                                     <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="#">
                                         Read more
                                     </a>

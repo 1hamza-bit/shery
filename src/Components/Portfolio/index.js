@@ -251,12 +251,12 @@ const Projects = () => {
           transition={{ duration: 0.9, delay: 0.9 }}
         >  */}
             <div className='dfi mt15'>
-              <h1>Our Projects   </h1>
+              <h1 style={{width: "fit-content"}}>Our Projects   </h1>
               <input
                 variant='standard'
                 type="text"
                 size='large'
-                // placeholder="Search by title"
+                placeholder="Search by title"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 // onKeyDown={handleSearch}

@@ -3,8 +3,8 @@ import * as React from 'react';
 import { AppBar, Box, Toolbar, IconButton, Typography, Menu, MenuItem, Container, Avatar, Button, Tooltip } from '@mui/material'; 
 import MenuIcon from '@mui/icons-material/Menu'; 
 import AdbIcon from '@mui/icons-material/Adb';
-import './index.css'
-import { Link } from "react-router-dom";
+import './index.scss'
+import { Link, useNavigate } from "react-router-dom";
 import { DataSaverOff } from "@mui/icons-material";
 import shop from "../../Assets/shophose.jpg"
 
@@ -14,17 +14,11 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const Header = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
-    const [open, setOpen] = React.useState(false);
+    const navigate = useNavigate();
 
-  React.useEffect(() => {
-    // Open the dialog when component mounts
-    setOpen(true);
-
-    // Clean up function to close the dialog when component unmounts
-    return () => {
-      setOpen(false);
-    };
-  }, []);
+   const handleNavigate=(page) => {
+    navigate(page);
+    }
   
     const handleOpenNavMenu = (event) => {
       setAnchorElNav(event.currentTarget);
@@ -63,7 +57,7 @@ const Header = () => {
               textDecoration: 'none',
             }}
           >
-          <Link to='/'>Shahzad Trading</Link>  
+          <Link to='/'>Shaharyar Traders</Link>  
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -92,12 +86,12 @@ const Header = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: 'block', md: 'none',width: "90%" },
               }}
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center"><Link className={`navitem ${window.location.pathname === page ? 'active' : ''}`} to={"/" + page.toLowerCase()}>{page}</Link></Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -125,57 +119,23 @@ const Header = () => {
           
               <Button
                 // key={page}
-                onClick={handleCloseNavMenu}
+                onClick={()=>handleNavigate("/products")}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-               <Link to="/products"> Products </Link>
+            <Link className={`navitem ${window.location.pathname === '/products' ? 'active' : ''}`}>Products</Link>   
               </Button>
 
               <Button
                 // key={page}
-                onClick={handleCloseNavMenu}
+                onClick={()=>handleNavigate("/contact")}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-               <Link to="/contact"> Contact </Link>
+               <Link className={`navitem ${window.location.pathname === '/contact' ? 'active' : ''}`} > Contact </Link>
               </Button>
        
           </Box>
 
-          <Dialog open={open} onClose={() => setOpen(false)} maxWidth="md" className="bg-grey productmodal">
-      <DialogContent className="bg-grey">
-        <Grid container spacing={2} sx={{ height: '400px' }}>
-          {/* Image Slideshow */}
-          <Grid item xs={6} sx={{ overflow: 'hidden' }}>
-            {/* Add your image slideshow component here */}
-            <img
-              src={shop}
-              alt="Slideshow"
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            />
-          </Grid>
-
-          {/* Sign-up Form */}
-          <Grid item xs={6} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <Typography variant="h6" gutterBottom>
-              Sign in to our website to get emails about our fresh hydraulic hose stocklots
-            </Typography>
-            <form>
-              <TextField
-                label="Enter your email"
-                variant="outlined"
-                margin="normal"
-                fullWidth
-                required
-                // Add your email state and onChange handler here
-              />
-              <Button variant="contained" color="primary" type="submit">
-                Subscribe
-              </Button>
-            </form>
-          </Grid>
-        </Grid>
-      </DialogContent>
-    </Dialog>
+          
         </Toolbar>
       </Container>
     </AppBar>

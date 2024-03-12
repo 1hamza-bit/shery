@@ -16,6 +16,7 @@ import { Stack } from '@mui/material';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { Send } from '@mui/icons-material';
 
 function Copyright(props) {
   return (
@@ -54,61 +55,68 @@ export default function SignInSide() {
           sm={4}
           md={6}
           sx={{
-            backgroundImage: 'url(https://img.freepik.com/premium-photo/blue-texture-background_464463-1141.jpg)',
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: (t) =>
-              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            // backgroundImage: 'url(https://img.freepik.com/premium-photo/blue-texture-background_464463-1141.jpg)',
+            // backgroundRepeat: 'no-repeat',
+            // backgroundColor: (t) =>
+            //   t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+            // backgroundSize: 'cover',
+            // backgroundPosition: 'center',
           }}
         >
           <div className='getin'>
-          <p className='neon'> Get in touch with us</p>
-
+            <p className='neon'> Get in touch with us</p>
+            <Typography variant='h2' mt={3}>Send Message</Typography>
+            <p>Do you have any inquiry or need some information feel free to send us a message</p>
+            <Grid container spacing={2} component="" sx={{ height: '', marginTop: "10px", height: "auto !important" }}>
+              <Grid item xs={11} sm={11} md={6} lg={6}>
+                <TextField
+                fullWidth
+                label="Name"
+                  variant='standard'
+                />
+              </Grid>
+              <Grid item xs={11} sm={11} md={6} lg={6}>
+                <TextField
+                fullWidth
+                label="Email"
+                  variant='standard'
+                />
+              </Grid>
+              <Grid item xs={11} sm={11} md={12} lg={12}>
+                <TextField
+                fullWidth
+                label="Message"
+                multiline
+                rows={4}
+                  variant='standard'
+                />
+              </Grid>
+            </Grid>
+            <div className='flex max-w-100 justify-end mt-6'>
+              <Button variant='outlined' className='!border-white !text-white w-1/5 !flex align-center color-white !justify-evenly'>Send <Send /></Button>
+            </div>
           </div>
-          </Grid>
-        <Grid item xs={12} sm={8} md={6} className='info'  elevation={6} square>
+        </Grid>
+        <Grid item xs={12} sm={8} md={6} className='info' elevation={6} square>
           <Box
             sx={{
               my: 8,
               mx: 4,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
+              // display: 'flex',
+              // flexDirection: 'column',
+              // alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'dark' }}>
-              {/* <LockOutlinedIcon />
-               */}
-               {/* <Typography>Contact Information</Typography> */}
-            </Avatar>
-            <Typography component="h1" variant="h5">
-            Contact Information
-            </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-            <Stack direction="row" className='stack'><p><LocalPhoneIcon  sx={{ fontSize: 40, marginTop: "10px", color: "rgb(255, 185, 0)" }} /> </p> <p>03224594593 {"  "}</p></Stack>
-            <Stack direction="row" className='stack'><p><EmailIcon c sx={{ fontSize: 40, marginTop: "10px", color: "rgb(255, 185, 0)" }}/> </p> <p>Shaharyartrading@gmail.com</p></Stack>
-
-              {/* <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              /> */}
-                         <Stack direction="row" className='stack'><p><LocationOnIcon  sx={{ fontSize: 40, marginTop: "10px", color: "rgb(255, 185, 0)" }}/>  </p> <p>Brandeth Road Lahore</p></Stack>
-
-              {/* <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
-                </Grid>
-              </Grid> */}
-              <Copyright sx={{ mt: 5 }} />
-            </Box>
+            <Typography variant='h2' mt={3}>Call us</Typography>
+            <p>Do you have any inquiry or need some information feel free to Call us</p>
+            <p className='flex align-center p-1 phone'><LocalPhoneIcon /> : 03224594593</p>
+            
+            <Typography variant='h2' mt={3}>Send Email</Typography>
+            <p>Do you have any inquiry or need some information feel free to Send us an Email</p>
+            <p className='flex align-center p-1 phone'><EmailIcon /> : hamtah112@gmail.com</p>
+            <Typography variant='h2' mt={4}>Track Us</Typography>
+            <p>If you wish to visit our Shop in Lahore  head to our headquaters</p>
+            <p className='flex align-center p-1 phone'><LocationOnIcon /> : 26 nishtar road Lahore</p>
           </Box>
         </Grid>
       </Grid>
