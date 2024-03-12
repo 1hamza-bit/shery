@@ -9,7 +9,7 @@ import fire from '../../Assets/fire.png'
 import gas from '../../Assets/gas.png'
 import canvas from '../../Assets/canvas.png'
 import React, { useState } from 'react';
-import { ArrowLeft, ArrowRight } from '@mui/icons-material';
+import { ArrowLeft, ArrowRight, HighQuality, HighQualityTwoTone, InstallDesktopOutlined, StarRounded } from '@mui/icons-material';
 
 const { Grid, Typography, Divider, Button, Card, CardActionArea, CardMedia, CardContent, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Slide } = require("@mui/material");
 
@@ -94,37 +94,50 @@ const Home = () => {
             </div>
 
             <Grid container spacing={2} className='second'>
-                <Grid item lg={6} md={6} sm={12} xs={12}>
-                    <Grid container spacing={1.5} className='boxes'>
+                <Grid item lg={6.5} md={6} sm={12} xs={12}>
+                    <Grid container spacing={2} className='boxes'>
                         <Grid item lg={6} md={6} sm={12} xs={12} >
-                            <div className='box shadow-xl'>
-                            lg
+                            <div className='box '>
+                                <HighQuality />
+                            <h2>High Quality</h2>
+                            <p>Choose rubber hoses made from high-quality materials to ensure durability and longevity.</p>
                             </div>
                             
                         </Grid>
                         <Grid item lg={6} md={6} sm={12} xs={12} >
-                            <div className='box shadow-xl'>
-                            lg
+                        <div className='box '>
+                                <StarRounded />
+                            <h2> Industry Standards</h2>
+                            <p>Compliance with standards ensures that the hoses meet  safety and performance requirements</p>
                             </div>
                             
                         </Grid>
                         <Grid item lg={6} md={6} sm={12} xs={12} >
-                            <div className='box shadow-xl'>
-                            lg
+                        <div className='box '>
+                                <HighQualityTwoTone />
+                            <h2>High Pressure</h2>
+                            <p> Choose hoses to handle the maximum working pressure of your system without  failure or leakage</p>
                             </div>
                             
                         </Grid>
                         <Grid item lg={6} md={6} sm={12} xs={12} >
-                            <div className='box shadow-xl'>
-                            lg
+                        <div className='box '>
+                                <HighQuality />
+                            <h2>Compatibility</h2>
+                            <p>Look for hoses designed to handle various fluids, including water, oil, fuels, chemicals, and gases</p>
                             </div>
                             
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid item lg={6} md={6} sm={12} xs={12}>
+                <Grid item lg={5} md={6} sm={12} xs={12}>
                         <div className='p-20 px-30 text-left'>
                             <h1>Providing the most reliable Rubber hoses by getting them from the best Manufacturers in the World</h1>
+                            <p>
+                            At Shaharyar Traders, we bring you unrivaled quality with our selection of rubber hoses sourced from top-tier manufacturers worldwide. 
+                            Partnering with industry leaders renowned for their innovation 
+                            and commitment to excellence, we ensure that each hose meets rigorous quality standards. Count on us to deliver reliable solutions for all your fluid transfer needs
+                            </p>
                         </div>
                 </Grid>
             </Grid>
