@@ -10,6 +10,8 @@ import gas from '../../Assets/gas.png'
 import canvas from '../../Assets/canvas.png'
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight, HighQuality, HighQualityTwoTone, InstallDesktopOutlined, StarRounded } from '@mui/icons-material';
+import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
+import BuildCircleIcon from '@mui/icons-material/BuildCircle';
 
 const { Grid, Typography, Divider, Button, Card, CardActionArea, CardMedia, CardContent, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Slide } = require("@mui/material");
 
@@ -114,7 +116,7 @@ const Home = () => {
                         </Grid>
                         <Grid item lg={6} md={6} sm={12} xs={12} >
                         <div className='box '>
-                                <HighQualityTwoTone />
+                                <PrecisionManufacturingIcon />
                             <h2>High Pressure</h2>
                             <p> Choose hoses to handle the maximum working pressure of your system without  failure or leakage</p>
                             </div>
@@ -122,7 +124,7 @@ const Home = () => {
                         </Grid>
                         <Grid item lg={6} md={6} sm={12} xs={12} >
                         <div className='box '>
-                                <HighQuality />
+                                <BuildCircleIcon />
                             <h2>Compatibility</h2>
                             <p>Look for hoses designed to handle various fluids, including water, oil, fuels, chemicals, and gases</p>
                             </div>
