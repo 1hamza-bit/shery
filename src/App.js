@@ -15,7 +15,7 @@ function App() {
 
   React.useEffect(() => {
     // Open the dialog when component mounts
-    setOpen(true);
+    // setOpen(true);
 
     // Clean up function to close the dialog when component unmounts
     return () => {

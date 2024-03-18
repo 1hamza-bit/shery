@@ -154,7 +154,7 @@ export default function SignInSide() {
               {loader ?
               <CircularProgress sx={{color: "white !important"}} />
               :
-              <Button variant='outlined' className='!border-white !text-white w-1/5 !flex align-center color-white !justify-evenly' onClick={sendEmail}>Send <Send /></Button>
+              <Button variant='outlined' sx={{minWidth: "151px !important"}} className='!border-white !text-white w-1/5 !flex align-center color-white !justify-evenly' onClick={sendEmail}>Send <Send /></Button>
               }
             </div>
           </div>
