@@ -9,19 +9,78 @@ import React from 'react';
 import { Button, Dialog, DialogContent, Grid, TextField, Typography } from '@mui/material';
 import shop from "./Assets/shophose.jpg"
 import { Helmet } from 'react-helmet';
+import styled from 'styled-components';
+import axios from 'axios';
+
+const WhiteOutlinedInput = styled('input')({
+  '&.MuiOutlinedInput-notchedOutline': {
+    borderColor: 'white',
+  },
+});
 
 function App() {
   const [open, setOpen] = React.useState(false);
+  const [email, setEmail] = React.useState("");
+  const [loader, setLoading] = React.useState(false);
+  const [error, setError] = React.useState(null);
+  const [success, setSuccess] = React.useState(null);
+
+
+  const validateEmail = (email) => {
+    // Regular expression for email validation
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const sendEmail = async () => {
+    // let data = {
+    //   name: "hamza",
+    //   message: "sd",
+    //   email: "d"
+    // }
+    setError(''); // Reset error state
+    try {
+        
+      // Check if email is valid
+      if (!validateEmail(email)) {
+        setError('Please enter a valid email address.');
+        return;
+      }
+      let data = {
+        name: "news",
+        email: email,
+        message: "newsss"
+      }
+
+      setLoading(true); // Set loader to true before making the request
+      const response = await axios.post('https://backend-production-f667.up.railway.app/api/contact', data);
+      console.log(response.data); // Assuming the response contains a success message
+      // If needed, handle success message here
+      setSuccess('Form is Submitted, Successfully'); // Set smessage
+      setEmail("")
+    } catch (err) {
+      console.error('Error:', err);
+      setError('An error occurred while submitting the form. Please try again.'); // Set error message
+    } finally {
+      setLoading(false); // Set loader to false after request is complete
+      setOpen(false)
+    }
+
+  }
 
   React.useEffect(() => {
     // Open the dialog when component mounts
-    // setOpen(true);
+    setOpen(true);
 
     // Clean up function to close the dialog when component unmounts
     return () => {
       setOpen(false);
     };
   }, []);
+
+  const handleChange = (value) => {
+    setEmail(value)
+  }
 
 
   return (
@@ -80,7 +139,7 @@ function App() {
       <DialogContent className="bg-grey">
         <Grid container spacing={2} sx={{ height: '400px' }}>
           {/* Image Slideshow */}
-          <Grid item xs={6} sx={{ overflow: 'hidden' }}>
+          <Grid item lg={6} md={6} sm={0} xs={0}  sx={{ overflow: 'hidden' }}>
             {/* Add your image slideshow component here */}
             <img
               src={shop}
@@ -90,7 +149,7 @@ function App() {
           </Grid>
 
           {/* Sign-up Form */}
-          <Grid item xs={6} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <Grid item lg={6} md={6} sm={12} xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingBottom: "7%"}}>
             <Typography variant="h6" gutterBottom>
               Sign in to our website to get emails about our fresh hydraulic hose stocklots
             </Typography>
@@ -101,9 +160,23 @@ function App() {
                 margin="normal"
                 fullWidth
                 required
+                value={email}
+                onChange={(e)=> handleChange(e.target.value)}
+                InputProps={{
+                  style: {
+                    color: 'white',
+                    borderColor: "white"
+                  },
+                  // inputComponent: WhiteOutlinedInput,
+                }}
+                InputLabelProps={{
+                  style: { color: 'white' },
+                }}
                 // Add your email state and onChange handler here
               />
-              <Button variant="contained" color="primary" type="submit">
+              {error || success?
+              <p style={{color: error ? "red" : "green"}}>{error ? error : success}</p> : null}
+              <Button variant="contained" color="primary"  onClick={sendEmail}>
                 Subscribe
               </Button>
             </form>

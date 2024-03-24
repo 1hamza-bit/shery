@@ -69,7 +69,7 @@ export default function SignInSide() {
       }
 
       setLoading(true); // Set loader to true before making the request
-      const response = await axios.post('http://localhost:5000/api/contact', data);
+      const response = await axios.post('https://backend-production-f667.up.railway.app/api/contact', data);
       console.log(response.data); // Assuming the response contains a success message
       // If needed, handle success message here
       setSuccess('Form is Submitted, Successfully'); // Set smessage
