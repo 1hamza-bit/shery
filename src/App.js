@@ -11,6 +11,7 @@ import shop from "./Assets/shophose.jpg"
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import axios from 'axios';
+import About from './Components/About';
 
 const WhiteOutlinedInput = styled('input')({
   '&.MuiOutlinedInput-notchedOutline': {
@@ -112,6 +113,10 @@ function App() {
         <Route
           path="/products"
           element={<Projects />}
+        />
+         <Route
+          path="/about"
+          element={<About />}
         />
           <Route
           path="/contact"
