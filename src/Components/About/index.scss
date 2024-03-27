@@ -1,5 +1,19 @@
+.map{
+background-color: black;
+    min-height: 500px;
+    h1{
+        font-size: 100px;
+        margin: 6px;
+        margin-left: 5% !important;
+    }
+p{
+    line-height: 1.5rem;
+}
 .globe{
+    margin-top: -8% !important;
     div{
         height: 100% !important;
     }
+}
+
 }
