@@ -7,6 +7,7 @@ import { Canvas } from "@react-three/fiber";
 import Globe from "react-globe.gl";
 import { GlobeMethods } from 'react-globe.gl';
 import { useEffect, useRef, useState } from "react";
+import shop from "../../Assets/shophose.jpg"
 
 const labelData = [
     { lat: 35.8617, lng: 104.1954, text: 'China', color: 'red', labelSize: 80 },
@@ -44,7 +45,7 @@ const About = () => {
                 globeEl.current.controls().autoRotate = true;
                 globeEl.current.controls().autoRotateSpeed = 0.7;
                 const aspectRatio = window.innerWidth / window.innerHeight;
-                const altitude = aspectRatio > 1 ? 4 : 2.5; // Adjust altitude based on aspect ratio or other factors
+                const altitude = window.innerWidth > 1608 ? 4 : 2.5; // Adjust altitude based on aspect ratio or other factors
 
                 globeEl.current.pointOfView({ lat: 0, lng: 0, altitude });
             } else {
@@ -78,8 +79,13 @@ const About = () => {
                         <Grid item lg={6} md={6} sm={12} xs={12}>
                             <div className="p-8 text-white">
                                 <h1>About Us</h1>
-                                <p>Shaharyar traderss by shahzad trading company is specialized in providing high quality hydraulic hose and rubber hose,
-                                    from last 10 years.sdhasfhklashfklhasklhfklh sfasjfjasklfjklasj skfjaskljfljaskn fsajklfjkls fsajklfjaskl </p>
+                                <p>"Shaharyar Traders, a subsidiary of Shahzad Trading Company established in 1975, specializes in top-quality hydraulic and rubber hoses for over a decade.
+                                    Our parent company, Shahzad Trading, brings decades of industry expertise.
+
+                                    We take pride in our international reach, having collaborated with numerous countries across the globe. From the United States to Japan,
+                                    our commitment to quality remains unwavering.
+
+                                    At Shaharyar Traders, we prioritize excellence and reliability in every product we deliver, ensuring customer satisfaction worldwide." </p>
                             </div>
                         </Grid>
                         <Grid item lg={6} md={6} sm={12} xs={12}>
@@ -108,17 +114,48 @@ const About = () => {
 
                     </Grid>
 
-                    <Grid container spacing={1} className="">
+                    <Grid container spacing={1} className="snd">
                         <Grid item lg={12} md={12} sm={12} xs={12}>
                             <div className="text-center m-8">
                                 <h2 className="underline">Who we are</h2>
                                 <div className="flex justify-center">
-                                <p className="max-w-4xl	!mt-0">Shaharyar traderss by shahzad trading company is specialized in providing high quality hydraulic hose and rubber hose,
-                                    from last 10 years.sdhasfhklashfklhasklhfklh sfasjfjasklfjklasj skfjaskljfljaskn fsajklfjkls fsajklfjaskl </p>
+                                    <p className="max-w-4xl	!mt-0 text-base	">Based in Lahore, Pakistan, Shaharyar Traders is a renowned establishment dedicated to providing the highest quality hoses to the local market.
+                                        Since our inception, we've focused on serving the needs of our customers across Pakistan with excellence and integrity.
+
+                                        Our commitment to delivering top-tier products has earned us a reputation as a trusted supplier in the region. From industrial enterprises to small businesses,
+                                        we cater to a diverse range of clients, ensuring that each receives the best quality hoses available.
+
+                                        At Shaharyar Traders, our roots run deep in the fabric of Pakistan's business landscape. We take pride in contributing to the growth and success of
+                                        local industries by offering reliable solutions backed by superior customer service. </p>
                                 </div>
-                                </div>
-                                
+                            </div>
+
                         </Grid>
+                    </Grid>
+
+                    <Grid container spacing={1} className="snd">
+                        <Grid item lg={6} md={6} sm={12} xs={12}>
+                            <div className="text-center m-16">
+                                <img src={shop}
+                                    alt="Slideshow"
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                />
+                            </div>
+
+                        </Grid>
+
+                        <Grid item lg={6} md={6} sm={12} xs={12}>
+                            <div className="text-center m-12">
+                                <h2 className="underline">Who we are</h2>
+                                <div className="flex justify-center">
+                                    <p className="max-w-4xl	!mt-0">Shaharyar traderss by shahzad trading company is specialized in providing high quality hydraulic hose and rubber hose,
+                                        from last 10 years.sdhasfhklashfklhasklhfklh sfasjfjasklfjklasj skfjaskljfljaskn fsajklfjkls
+                                        fsajklfjaskl.sdhasfhklashfklhasklhfklh sfasjfjasklfjklasj skfjaskljfljaskn fsajklfjkls fsajklfjaskl </p>
+                                </div>
+                            </div>
+
+                        </Grid>
+
                     </Grid>
                 </div>
             </div>

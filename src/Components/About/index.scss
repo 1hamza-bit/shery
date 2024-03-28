@@ -1,5 +1,5 @@
 .map{
-background-color: black;
+background-color: rgb(16, 17, 17);
     min-height: 500px;
     h1{
         font-size: 100px;
@@ -19,8 +19,12 @@ p{
 
 @media screen and (min-width: 1608px) {
     .globe{
-    margin-top: -20% !important;
+    margin-top: -22% !important;
     }
 }
 
+}
+
+.snd{
+    color: rgb(146, 146, 146);
 }

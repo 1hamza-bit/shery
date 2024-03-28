@@ -12,6 +12,7 @@ import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import axios from 'axios';
 import About from './Components/About';
+import Privacy from './Components/Privacy';
 
 const WhiteOutlinedInput = styled('input')({
   '&.MuiOutlinedInput-notchedOutline': {
@@ -121,6 +122,10 @@ function App() {
           <Route
           path="/contact"
           element={<Contact />}
+        />
+          <Route
+          path="/Privacy"
+          element={<Privacy />}
         />
          <Route path="/sitemap" element={<Sitemap />} />
         </Routes>

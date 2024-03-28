@@ -3,6 +3,8 @@
     /* margin-top: 1% !important; */
     background-color: rgb(231, 208, 179) !important;
     color: black !important;
+    position: sticky !important;
+    z-index: 12000;
     .navitem{
         font-size: 15px !important;
         font-weight: 600;
