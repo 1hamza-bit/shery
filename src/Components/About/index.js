@@ -1,5 +1,5 @@
 
-import { Grid } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import Footer from "../Layout/footer";
 import Header from "../Layout/header";
 import "./index.scss"
@@ -8,6 +8,7 @@ import Globe from "react-globe.gl";
 import { GlobeMethods } from 'react-globe.gl';
 import { useEffect, useRef, useState } from "react";
 import shop from "../../Assets/shophose.jpg"
+import { Link } from "react-router-dom";
 
 const labelData = [
     { lat: 35.8617, lng: 104.1954, text: 'China', color: 'red', labelSize: 80 },
@@ -73,7 +74,7 @@ const About = () => {
     return (
         <>
             <div className="about">
-                <div className="overlay">
+                <div className="overlay mt-8">
                     <Header />
                     <Grid container spacing={1} className="map">
                         <Grid item lg={6} md={6} sm={12} xs={12}>
@@ -116,10 +117,10 @@ const About = () => {
 
                     <Grid container spacing={1} className="snd">
                         <Grid item lg={12} md={12} sm={12} xs={12}>
-                            <div className="text-center m-8">
+                            <div className="text-center m-28">
                                 <h2 className="underline">Who we are</h2>
                                 <div className="flex justify-center">
-                                    <p className="max-w-4xl	!mt-0 text-base	">Based in Lahore, Pakistan, Shaharyar Traders is a renowned establishment dedicated to providing the highest quality hoses to the local market.
+                                    <p className="max-w-4xl	!mt-0 text-lg	">Based in Lahore, Pakistan, Shaharyar Traders is a renowned establishment dedicated to providing the highest quality hoses to the local market.
                                         Since our inception, we've focused on serving the needs of our customers across Pakistan with excellence and integrity.
 
                                         Our commitment to delivering top-tier products has earned us a reputation as a trusted supplier in the region. From industrial enterprises to small businesses,
@@ -133,9 +134,11 @@ const About = () => {
                         </Grid>
                     </Grid>
 
-                    <Grid container spacing={1} className="snd">
+                 
+
+                    <Grid container spacing={1} className="thrd">
                         <Grid item lg={6} md={6} sm={12} xs={12}>
-                            <div className="text-center m-16">
+                            <div className="text-center m-16 !ml-28 !mr-28">
                                 <img src={shop}
                                     alt="Slideshow"
                                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
@@ -144,18 +147,31 @@ const About = () => {
 
                         </Grid>
 
-                        <Grid item lg={6} md={6} sm={12} xs={12}>
-                            <div className="text-center m-12">
-                                <h2 className="underline">Who we are</h2>
+                        <Grid item lg={5} md={5} sm={12} xs={12}>
+                            <div className="!mt-24 m-12">
+                                <h2 className="underline text-lg">Our Shop</h2>
                                 <div className="flex justify-center">
-                                    <p className="max-w-4xl	!mt-0">Shaharyar traderss by shahzad trading company is specialized in providing high quality hydraulic hose and rubber hose,
-                                        from last 10 years.sdhasfhklashfklhasklhfklh sfasjfjasklfjklasj skfjaskljfljaskn fsajklfjkls
-                                        fsajklfjaskl.sdhasfhklashfklhasklhfklh sfasjfjasklfjklasj skfjaskljfljaskn fsajklfjkls fsajklfjaskl </p>
+                                    <p className="max-w-4xl	!mt-0 text-lg">Visit our shop located at Barandeth Road, where we house our extensive w
+                                    arehouse of top-quality stocklots. Discover a wide range of products to meet your needs. </p>
                                 </div>
                             </div>
 
                         </Grid>
 
+                    </Grid>
+
+                    <Grid container spacing={1} className="bg">
+                        <Grid item lg={12} md={12} sm={12} xs={12}>
+                            <div className="text-center m-8">
+                                <h2 className="underline">Contact Us</h2>
+                                <div className="flex justify-center">
+                                    <p className="max-w-4xl	!mt-0 text-lg	">Do You have any queries ? Please fell free to Connect with Us  </p>
+                                </div>
+                                <Button variant="outlined" className=""><Link to="/contact" >  Lets Connect </Link></Button>
+
+                            </div>
+
+                        </Grid>
                     </Grid>
                 </div>
             </div>

@@ -23,7 +23,7 @@ const Footer = () => {
             </Grid>
             <Grid item lg={3} md={6} sm={12} xs={12}>
             <div className='w70p p010p'>
-                        <h1>About us</h1>
+                        <h1>Site Links</h1>
                         <div style={{ textAlign: 'center' }}>
                             <Divider className='divider' />
                         </div>
@@ -36,19 +36,40 @@ const Footer = () => {
                                 </Typography>
                             </ListItem>
                             <ListItem>
-                                <Typography className="bold  ">
-                                    <Link > Email: hamtah112@gmai.com </Link>
+                                <Typography className="bold tu ">
+                                    <Link to="/contact"> Contact </Link>
 
 
                                 </Typography>
                             </ListItem>
+                            <ListItem>
+                                <Typography className="bold tu ">
+                                    <Link to="/about"> About </Link>
+
+
+                                </Typography>
+                            </ListItem>
+                            <ListItem>
+                                <Typography className="bold tu ">
+                                    <Link to="/Privacy"> Privacy Policy </Link>
+
+
+                                </Typography>
+                            </ListItem>
+                          
                         </List>
                        
                     </div>
             </Grid>
-            <Grid item lg={2} md={6} sm={12} xs={12}>
-            <div className='w70p '>
-                      
+            <Grid item lg={2.5} md={6} sm={12} xs={12}>
+            <div className='w70p p010p'>
+                <h1>About us</h1>
+                <div style={{ textAlign: 'center' }}>
+                            <Divider className='divider' />
+                        </div>
+                <p className="!mt-2 text-lg	">Based in Lahore, Pakistan, Shaharyar Traders is a renowned establishment dedicated to providing the highest
+                 quality hoses to the local market.
+                                   </p>
                     </div>
             </Grid>
             <Grid item lg={3} md={6} sm={12} xs={12}>

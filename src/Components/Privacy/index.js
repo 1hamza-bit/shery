@@ -30,12 +30,12 @@ const Privacy = () => {
                 <div className="overlay">
                     <Header />
                     <Grid container spacing={1} className="map flex justify-center">
-                        <Grid item lg={9} md={9} sm={12} xs={12}>
-                            <div class="max-w-2xl mx-auto px-4 py-8">
+                        <Grid item lg={9} md={9} sm={12} xs={12} className="privacy">
+                            <div class="max-w-4xl mx-auto px-4 py-8">
 
-                                <h2 class="text-2xl font-bold mb-4">Privacy Policy</h2>
+                                <h2 class="text-3xl font-bold mb-4">Privacy Policy</h2>
 
-                                <p class="mb-4">At Shaharyar Traders, the privacy of our visitors is of utmost importance to us. This Privacy Policy document outlines the types of personal information that is received and collected by Shaharyar Traders and how it is used.</p>
+                                <p class="mb-4 text-base">At Shaharyar Traders, the privacy of our visitors is of utmost importance to us. This Privacy Policy document outlines the types of personal information that is received and collected by Shaharyar Traders and how it is used.</p>
 
                                 <h3 class="text-lg font-bold mb-2">Information Collection and Use</h3>
                                 <p class="mb-4">Shaharyar Traders may collect personal information when you visit our website, register for an account, place an order, subscribe to our newsletter, respond to a survey, or fill out a form. The information collected may include your name, email address, mailing address, phone number, and payment details.</p>
@@ -55,7 +55,7 @@ const Privacy = () => {
                                 <p class="mb-4">Shaharyar Traders reserves the right to update or change this Privacy Policy at any time. Any changes will be effective immediately upon posting on this page. We encourage you to periodically review this Privacy Policy for any updates.</p>
 
                                 <h3 class="text-lg font-bold mb-2">Contact Us</h3>
-                                <p class="mb-4">If you have any questions or concerns about this Privacy Policy or the practices of Shaharyar Traders, please contact us at <span class="underline">[email address]</span> or <span class="underline">[phone number]</span>.</p>
+                                <p class="mb-4">If you have any questions or concerns about this Privacy Policy or the practices of Shaharyar Traders, please contact us at <span class="underline">hamtah112@gmail.com</span> or <span class="underline">+92 3224594593</span>.</p>
 
                                 <p class="mt-4">By using our website, you consent to the terms of this Privacy Policy.</p>
 

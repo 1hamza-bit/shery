@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { DataSaverOff } from "@mui/icons-material";
 import shop from "../../Assets/shophose.jpg"
 
-const pages = ['Products', 'Contact'];
+const pages = ['Products', 'Contact' , 'About'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Header = () => {
@@ -85,6 +85,7 @@ const Header = () => {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
+              className="mobilemenu"
               sx={{
                 display: { xs: 'block', md: 'none',width: "90%" },
               }}
@@ -116,6 +117,14 @@ const Header = () => {
             <Link to='/'>Shahzad Traders</Link>  
           </Typography>
           <Box sx={{ flexGrow: 1, justifyContent: "end", display: { xs: 'none', md: 'flex' } }}>
+
+          <Button
+                // key={page}
+                onClick={()=>handleNavigate("/about")}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+            <Link className={`navitem ${window.location.pathname === '/about' ? 'active' : ''}`}>About Us</Link>   
+              </Button>
           
               <Button
                 // key={page}

@@ -5,15 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './Components/Home';
 import Projects from './Components/Portfolio';
+import { ReactLenis } from '@studio-freight/react-lenis';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <ReactLenis   options={{    duration : 2,  }} root >
+
   <React.StrictMode>
     <App />
     {/* <Home />
      */}
      {/* <Projects /> */}
   </React.StrictMode>
+  </ReactLenis>
 );
 
 // If you want to start measuring performance in your app, pass a function
