@@ -185,6 +185,7 @@ const About = () => {
 
                             </Grid>
                         </Grid>
+                        </Grid>
                     </div>
                 </div>
             {/* </TracingBeam> */}
