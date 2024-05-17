@@ -13,8 +13,9 @@ import { ArrowLeft, ArrowRight, HighQuality, HighQualityTwoTone, InstallDesktopO
 import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
 import BuildCircleIcon from '@mui/icons-material/BuildCircle';
 import axios from 'axios';
+import { Fade, Zoom } from "react-awesome-reveal";
 
-const { Grid, Typography, Divider, Button, Card, CardActionArea, CardMedia, CardContent, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Slide } = require("@mui/material");
+const { Grid, Typography, Divider, Button, Card, CardActionArea, CardMedia, CardContent, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Slide,  } = require("@mui/material");
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -106,6 +107,7 @@ const Home = () => {
 
     return (
         <>
+         <Fade cascade damping={0.1}>
             <div container className="main" >
                 {/* <hr />
                     <hr /> */}
@@ -134,55 +136,74 @@ const Home = () => {
             </div>
 
             <Grid container spacing={2} className='second'>
+
                 <Grid item lg={6.5} md={6} sm={12} xs={12}>
-                    <Grid container spacing={2} className='boxes'>
-                        <Grid item lg={6} md={6} sm={12} xs={12} >
-                            <div className='box '>
-                                <HighQuality />
-                                <h2>High Quality</h2>
-                                <p>Choose rubber hoses made from high-quality materials to ensure durability and longevity.</p>
-                            </div>
+                        <div className="sApp">
+                        <Fade cascade damping={0.3} fraction={0.2}>  
+                            <div className="spotlight-container">
+                                   <div className="spotlight"></div> 
+                                {/* <h1>Spotlight is the new trend.</h1> */}
+                                <Grid container spacing={2} className='boxes'>
+                               
+                                    <Grid item lg={6} md={6} sm={12} xs={12} >
+                                        <div className='box '>
+                                            <HighQuality />
+                                            <h2>High Quality</h2>
+                                            <p>Choose rubber hoses made from high-quality materials to ensure durability and longevity.</p>
+                                        </div>
 
-                        </Grid>
-                        <Grid item lg={6} md={6} sm={12} xs={12} >
-                            <div className='box '>
-                                <StarRounded />
-                                <h2> Industry Standards</h2>
-                                <p>Compliance with standards ensures that the hoses meet  safety and performance requirements</p>
-                            </div>
+                                    </Grid>
+                                    <Grid item lg={6} md={6} sm={12} xs={12} >
+                                        <div className='box '>
+                                            <StarRounded />
+                                            <h2> Industry Standards</h2>
+                                            <p>Compliance with standards ensures that the hoses meet  safety and performance requirements</p>
+                                        </div>
 
-                        </Grid>
-                        <Grid item lg={6} md={6} sm={12} xs={12} >
-                            <div className='box '>
-                                <PrecisionManufacturingIcon />
-                                <h2>High Pressure</h2>
-                                <p> Choose hoses to handle the maximum working pressure of your system without  failure or leakage</p>
-                            </div>
+                                    </Grid>
+                                    <Grid item lg={6} md={6} sm={12} xs={12} >
+                                        <div className='box '>
+                                            <PrecisionManufacturingIcon />
+                                            <h2>High Pressure</h2>
+                                            <p> Choose hoses to handle the maximum working pressure of your system without  failure or leakage</p>
+                                        </div>
 
-                        </Grid>
-                        <Grid item lg={6} md={6} sm={12} xs={12} >
-                            <div className='box '>
-                                <BuildCircleIcon />
-                                <h2>Compatibility</h2>
-                                <p>Look for hoses designed to handle various fluids, including water, oil, fuels, chemicals, and gases</p>
-                            </div>
+                                    </Grid>
+                                    <Grid item lg={6} md={6} sm={12} xs={12} >
+                                        <div className='box '>
+                                            <BuildCircleIcon />
+                                            <h2>Compatibility</h2>
+                                            <p>Look for hoses designed to handle various fluids, including water, oil, fuels, chemicals, and gases</p>
+                                        </div>
 
-                        </Grid>
-                    </Grid>
+                                    </Grid>
+                               
+                                </Grid>
+                            </div>
+                            </Fade>
+                        </div>
+
+
+               
                 </Grid>
+
+
                 <Grid item lg={5} md={6} sm={12} xs={12}>
-                    <div className='p-20 px-30 text-left'>
-                        <h1>Providing the most reliable Rubber hoses by getting them from the best Manufacturers in the World</h1>
-                        <p>
-                            At Shaharyar Traders, we bring you unrivaled quality with our selection of rubber hoses sourced from top-tier manufacturers worldwide.
-                            Partnering with industry leaders renowned for their innovation
-                            and commitment to excellence, we ensure that each hose meets rigorous quality standards. Count on us to deliver reliable solutions for all your fluid transfer needs
-                        </p>
-                    </div>
+                    <Fade delay={0.4} fraction={0.4}>
+                        <div className='p-20 pt-40 px-30 text-left'>
+                            <h1> Providing the most reliable Rubber hoses by getting them from the best Manufacturers in the World</h1>
+                            <p>
+                                At Shaharyar Traders, we bring you unrivaled quality with our selection of rubber hoses sourced from top-tier manufacturers worldwide.
+                                Partnering with industry leaders renowned for their innovation
+                                and commitment to excellence, we ensure that each hose meets rigorous quality standards. Count on us to deliver reliable solutions for all your fluid transfer needs
+                            </p>
+                        </div>
+                    </Fade>
                 </Grid>
+
             </Grid>
             <div className='featured'>
-                <h1 className='pl-8 mt-8 '>Our Most Popular Products</h1>
+               <h1 className='pl-8 mt-8 '><Fade cascade damping={0.01}> Our Most Popular Products</Fade></h1> 
                 <hr className='ml-8 mt-2 ' />
                 <Grid container spacing={0} className='second'>
                     {products.map((product, index) => (
@@ -325,6 +346,7 @@ const Home = () => {
                     <Button onClick={handleCloseBlog}>Close</Button>
                 </DialogActions>
             </Dialog>
+            </Fade>
 
             <Footer />
         </>

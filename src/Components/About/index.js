@@ -7,6 +7,7 @@ import { Canvas } from "@react-three/fiber";
 import Globe from "react-globe.gl";
 import { GlobeMethods } from 'react-globe.gl';
 import { useEffect, useRef, useState } from "react";
+// import { TracingBeam } from "./tracing.tsx";
 
 const labelData = [
     { lat: 35.8617, lng: 104.1954, text: 'China', color: 'red', labelSize: 80 },
@@ -71,57 +72,59 @@ const About = () => {
 
     return (
         <>
-            <div className="about">
-                <div className="overlay">
-                    <Header />
-                    <Grid container spacing={1} className="map">
-                        <Grid item lg={6} md={6} sm={12} xs={12}>
-                            <div className="p-8 text-white">
-                                <h1>About Us</h1>
-                                <p>Shaharyar traderss by shahzad trading company is specialized in providing high quality hydraulic hose and rubber hose,
-                                    from last 10 years.sdhasfhklashfklhasklhfklh sfasjfjasklfjklasj skfjaskljfljaskn fsajklfjkls fsajklfjaskl </p>
-                            </div>
-                        </Grid>
-                        <Grid item lg={6} md={6} sm={12} xs={12}>
-                            <div className="globe" style={{ width: '400px', height: '400px', position: 'relative' }}>
-                                <Globe
-                                    width={w + shiftAmmount}
-                                    onGlobeRightClick={(event) => console.log(event)}
-                                    globeImageUrl='https://unpkg.com/three-globe@2.18.0/example/img/earth-night.jpg'
-                                    bumpImageUrl='https://unpkg.com/three-globe@2.18.0/example/img/earth-topology.png'
-                                    backgroundColor="rgba(0,0,0,0)"
-                                    //   backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
-                                    //   waitForGlobeReady={true}
-                                    animateIn={true}
-                                    showGlobe={true}
-                                    ref={globeEl}
-                                    labelsData={labelData}
-                                    // labelText={labelText}
-                                    labelSize={labelSize}
-                                    // onLabelHover={handleLabelHover}
-                                    labelColor={() => 'rgba(255, 165, 0, 0.5)'}
-                                />
-                                {hoveredLabel && <div style={{ position: 'absolute', top: 10, left: 10 }}>{hoveredLabel}</div>}
-
-                            </div>
-                        </Grid>
-
-                    </Grid>
-
-                    <Grid container spacing={1} className="">
-                        <Grid item lg={12} md={12} sm={12} xs={12}>
-                            <div className="text-center m-8">
-                                <h2 className="underline">Who we are</h2>
-                                <div className="flex justify-center">
-                                <p className="max-w-4xl	!mt-0">Shaharyar traderss by shahzad trading company is specialized in providing high quality hydraulic hose and rubber hose,
-                                    from last 10 years.sdhasfhklashfklhasklhfklh sfasjfjasklfjklasj skfjaskljfljaskn fsajklfjkls fsajklfjaskl </p>
+            {/* <TracingBeam > */}
+                <div className="about">
+                    <div className="overlay">
+                        <Header />
+                        <Grid container spacing={1} className="map">
+                            <Grid item lg={6} md={6} sm={12} xs={12}>
+                                <div className="p-8 text-white">
+                                    <h1>About Us</h1>
+                                    <p>Shaharyar traderss by shahzad trading company is specialized in providing high quality hydraulic hose and rubber hose,
+                                        from last 10 years.sdhasfhklashfklhasklhfklh sfasjfjasklfjklasj skfjaskljfljaskn fsajklfjkls fsajklfjaskl </p>
                                 </div>
+                            </Grid>
+                            <Grid item lg={6} md={6} sm={12} xs={12}>
+                                <div className="globe" style={{ width: '400px', height: '400px', position: 'relative' }}>
+                                    <Globe
+                                        width={w + shiftAmmount}
+                                        onGlobeRightClick={(event) => console.log(event)}
+                                        globeImageUrl='https://unpkg.com/three-globe@2.18.0/example/img/earth-night.jpg'
+                                        bumpImageUrl='https://unpkg.com/three-globe@2.18.0/example/img/earth-topology.png'
+                                        backgroundColor="rgba(0,0,0,0)"
+                                        //   backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+                                        //   waitForGlobeReady={true}
+                                        animateIn={true}
+                                        showGlobe={true}
+                                        ref={globeEl}
+                                        labelsData={labelData}
+                                        // labelText={labelText}
+                                        labelSize={labelSize}
+                                        // onLabelHover={handleLabelHover}
+                                        labelColor={() => 'rgba(255, 165, 0, 0.5)'}
+                                    />
+                                    {hoveredLabel && <div style={{ position: 'absolute', top: 10, left: 10 }}>{hoveredLabel}</div>}
+
                                 </div>
-                                
+                            </Grid>
+
                         </Grid>
-                    </Grid>
+
+                        <Grid container spacing={1} className="">
+                            <Grid item lg={12} md={12} sm={12} xs={12}>
+                                <div className="text-center m-8">
+                                    <h2 className="underline">Who we are</h2>
+                                    <div className="flex justify-center">
+                                        <p className="max-w-4xl	!mt-0">Shaharyar traderss by shahzad trading company is specialized in providing high quality hydraulic hose and rubber hose,
+                                            from last 10 years.sdhasfhklashfklhasklhfklh sfasjfjasklfjklasj skfjaskljfljaskn fsajklfjkls fsajklfjaskl </p>
+                                    </div>
+                                </div>
+
+                            </Grid>
+                        </Grid>
+                    </div>
                 </div>
-            </div>
+            {/* </TracingBeam> */}
             <Footer />
 
         </>
