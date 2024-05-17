@@ -21,6 +21,7 @@
     "react-dom": "^18.2.0",
     "react-globe": "^5.0.2",
     "react-globe.gl": "^2.27.2",
+    "@studio-freight/react-lenis": "^0.0.38",
     "react-helmet": "^6.1.0",
     "react-router-dom": "^6.19.0",
     "react-scripts": "5.0.1",

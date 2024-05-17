@@ -3,6 +3,8 @@
     /* margin-top: 1% !important; */
     background-color: rgb(231, 208, 179) !important;
     color: black !important;
+    position: sticky !important;
+    z-index: 12000;
     .navitem{
         font-size: 15px !important;
         font-weight: 600;
@@ -29,11 +31,20 @@
     min-height: 50px !important;
 }
 
+.mobilemenu{
+    .MuiPaper-root{
+    width: 100% !important;
+    }
+    li{
+        padding: 3% !important;
+    }
+}
+
 
 
 
 .footer{
-    background: linear-gradient(90deg, rgba(74, 72, 68, 0.9) 0%, rgba(78, 73, 68, 0.9) 52%);
+    background: linear-gradient(90deg, rgba(71, 74, 68, 0.9) 0%, rgba(68, 78, 76, 0.9) 52%);
     // box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     margin-top: 0% !important;
     font-size: 16px;
