@@ -6,6 +6,10 @@ import green from '../../Assets/png green.png'
 import pipe from '../../Assets/pipe.png'
 import hydraulic from '../../Assets/hydraulic.png'
 import fire from '../../Assets/fire.png'
+import greenpipe from '../../Assets/green pipe.jpg'
+import greenpipe2 from '../../Assets/green2.jpg'
+import redpipe from '../../Assets/red pipe.jpg'
+import red2 from '../../Assets/red2.jpg'
 import gas from '../../Assets/gas.png'
 import canvas from '../../Assets/canvas.png'
 import React, { useEffect, useState } from 'react';
@@ -26,7 +30,7 @@ const products = [
         title: 'Hydraulic Hose',
         category: 'Hydraulic Hoses',
         description: "Our hydraulic hoses are designed to withstand high pressures and deliver exceptional performance. Available in various sizes to suit your needs, these hoses are engineered for reliability and durability in hydraulic systems.",
-        image: green,
+        image: greenpipe,
         tag: "Hydraulic hose"
     },
     {
@@ -47,7 +51,7 @@ const products = [
         title: 'Fire Hose',
         category: 'Firefighting Hoses',
         description: "When it comes to firefighting, reliability is paramount. Our fire hoses are engineered to deliver under pressure when it matters most. Available in different sizes and configurations, these hoses provide the strength and flexibility needed for effective firefighting operations.",
-        image: hydraulic,
+        image: redpipe,
         tag: "Fire hose"
     }
 ];
@@ -210,7 +214,7 @@ const Home = () => {
                         <Grid item lg={3} md={4} sm={12} xs={12}>
                             <Card className='card' sx={{ maxWidth: 345 }}>
 
-                                <div className='img'>
+                                <div className='img overflow-hidden'>
                                     <CardMedia
                                         component="img"
                                         height="240"

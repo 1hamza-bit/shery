@@ -8,6 +8,10 @@ import Header from '../Layout/header';
 // import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import green from '../../Assets/png green.png'
 import pipe from '../../Assets/pipe.png'
+import greenpipe from '../../Assets/green pipe.jpg'
+import greenpipe2 from '../../Assets/green2.jpg'
+import redpipe from '../../Assets/red pipe.jpg'
+import red2 from '../../Assets/red2.jpg'
 import hydraulic from '../../Assets/hydraulic.png'
 import fire from '../../Assets/fire.png'
 import gas from '../../Assets/gas.png'
@@ -210,14 +214,14 @@ const Projects = () => {
 
   const products = [
     {
-      image: 'https://daubnerusa.com/wp-content/uploads/2021/04/4129.jpg',
-      title: 'Product 1',
-      description: 'Description for Product 1',
+      image: red2,
+      title: 'Hydraulic 3/8',
+      description: 'This is hydraulic/ wire braided hose with R1',
     },
     {
-      image: 'https://www.thespruce.com/thmb/TZytWxNYr0nvxNDyvLBMjUP9JqU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/3SP4153399_hero-90bfa8e547794d269a9283a94f4ff74e.jpg',
-      title: 'Product 2',
-      description: 'Description for Product 2',
+      image: greenpipe2,
+      title: 'Product 1/2',
+      description: 'This is hydraulic/ wire braided hose with R1',
     },
     // Add more products as needed
   ];
@@ -225,9 +229,12 @@ const Projects = () => {
   return (
     <>
       <section id="projects" className={styles.projects}>
+      <Header />
+
         <div className={styles.overlay}>
-          <div className={`${styles.secondoverlay} `}>
-            <Header />
+
+          <div className={``}>
+
 
             <Grid container spacing={2} className='mt5p'>
               <Grid item lg={5} md={5} sm={12} sx={12} className={styles.inquiry}>
@@ -251,18 +258,10 @@ const Projects = () => {
           transition={{ duration: 0.9, delay: 0.9 }}
         >  */}
             <div className='dfi mt15'>
-              <h1 style={{width: "fit-content"}}>Our Projects   </h1>
-              <input
-                variant='standard'
-                type="text"
-                size='large'
-                placeholder="Search by title"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                // onKeyDown={handleSearch}
-                className={styles.search}
-              />
-            </div>
+              <div className='flex items-center justify-evenly w-full'>
+              <h1 style={{ width: "fit-content" }}>Our Projects   </h1>
+             
+            
             <div className={styles['project-tags']}>
               <Button className={styles.tag} onClick={() => handleTagClick("clear")}>Clear</Button>
               {tags.map((tag, index) => (
@@ -274,6 +273,20 @@ const Projects = () => {
                   <span>{tag}</span>
                 </Button>
               ))}
+
+            </div>
+
+            <input
+                variant='standard'
+                type="text"
+                size='large'
+                placeholder="Search by title"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                // onKeyDown={handleSearch}
+                className={`${styles.search} !text-white`}
+              />
+            </div>
 
             </div>
             <div className={styles['project-cards']}>
@@ -289,8 +302,8 @@ const Projects = () => {
            exit={{ opacity: 0 }}
            transition={{ duration: 0.9 }}
          > */}
-                    <div key={index} className={`${styles['project-card']} ${!project.image ? styles.red : ''}`}>
-                      {project.image ? <div className={styles['project-image']}>
+                    <div key={index} className={`${styles['project-card']} !bg-black ${!project.image ? styles.red : ''}`}>
+                      {project.image ? <div className={`${styles['project-image']} !bg-zinc-800`}>
                         <img src={project.image} alt={project.title} />
                       </div> : null}
                       <div className={styles['project-details']}>
@@ -300,7 +313,7 @@ const Projects = () => {
                       </div>
                     </div>
                     {/* </motion.div> */}
-                
+
                   </Grid>
 
                 ))}
