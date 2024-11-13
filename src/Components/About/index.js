@@ -179,9 +179,23 @@ const About = () => {
                             </div>
 
                         </Grid>
-                    </Grid>
+
+                        <Grid container spacing={1} className="">
+                            <Grid item lg={12} md={12} sm={12} xs={12}>
+                                <div className="text-center m-8">
+                                    <h2 className="underline">Who we are</h2>
+                                    <div className="flex justify-center">
+                                        <p className="max-w-4xl	!mt-0">Shaharyar traderss by shahzad trading company is specialized in providing high quality hydraulic hose and rubber hose,
+                                            from last 10 years.sdhasfhklashfklhasklhfklh sfasjfjasklfjklasj skfjaskljfljaskn fsajklfjkls fsajklfjaskl </p>
+                                    </div>
+                                </div>
+
+                            </Grid>
+                        </Grid>
+                        </Grid>
+                    </div>
                 </div>
-            </div>
+            {/* </TracingBeam> */}
             <Footer />
 
         </>
