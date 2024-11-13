@@ -24,6 +24,12 @@ const labelData = [
     { lat: 23.4241, lng: 53.8478, text: 'UAE', color: 'lime', size: 120 },
 ];
 
+const lineData = [
+    { startLat: 35.8617, startLng: 104.1954, endLat: 35.9078, endLng: 127.7669 }, // China to Korea
+    { startLat: 35.9078, startLng: 127.7669, endLat: 37.0902, endLng: -95.7129 }, // Korea to USA
+    // Add more line data as needed for other connections
+  ];
+
 const About = () => {
     const globeEl = useRef(undefined);
     const w = window.innerWidth;
@@ -105,6 +111,7 @@ const About = () => {
                                     labelsData={labelData}
                                     // labelText={labelText}
                                     labelSize={labelSize}
+                                    linesData={lineData} // Pass the line data
                                     // onLabelHover={handleLabelHover}
                                     labelColor={() => 'rgba(255, 165, 0, 0.5)'}
                                 />
