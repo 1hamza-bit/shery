@@ -16,10 +16,13 @@ import hydraulic from '../../Assets/hydraulic.png'
 import fire from '../../Assets/fire.png'
 import gas from '../../Assets/gas.png'
 import canvas from '../../Assets/canvas.png'
+import hydra from '../../Assets/aicontainer.jpeg'
+import firecontainer from '../../Assets/firecontainer2.jpeg'
 
 
 import { debounce } from 'lodash';
 import ProductSlider from './Slider';
+import { Search, SendHorizonalIcon } from 'lucide-react';
 
 const projectData = [
   {
@@ -214,12 +217,12 @@ const Projects = () => {
 
   const products = [
     {
-      image: red2,
+      image: hydra,
       title: 'Hydraulic 3/8',
       description: 'This is hydraulic/ wire braided hose with R1',
     },
     {
-      image: greenpipe2,
+      image: firecontainer,
       title: 'Product 1/2',
       description: 'This is hydraulic/ wire braided hose with R1',
     },
@@ -229,98 +232,108 @@ const Projects = () => {
   return (
     <>
       <section id="projects" className={styles.projects}>
-      <Header />
+        <Header />
 
         <div className={styles.overlay}>
 
           <div className={``}>
 
 
-            <Grid container spacing={2} className='mt5p'>
-              <Grid item lg={5} md={5} sm={12} sx={12} className={styles.inquiry}>
+            <div className='mt5p flex flex-col mb-6 overflow-hidden md:h-[550px] items-center md:flex-row px-3 md:px-10 gap-12'>
+              <div className={`md:w-2/5 ${styles.inquiry}`}>
                 <h1>Our most Popular Products</h1>
-                <p> Introducing our star performers – the epitome of reliability and versatility in rubber hoses.
+                <p className='text-md'> Introducing our star performers – the epitome of reliability and versatility in rubber hoses.
                   Engineered for durability and flexibility, our most popular products deliver unmatched
                   performance across various applications. From heavy-duty industrial use to everyday tasks,
                   these hoses are crafted to withstand the toughest conditions while ensuring optimal functionality.
                   Trust in the quality that sets the standard –
                   explore our top-rated rubber hoses today and experience durability like never before.</p>
-                <Button className=''><a href={`mailto:${"hamtah112@gmail.com"}`} >Send Inquiry</a></Button>
-              </Grid>
-              <Grid item lg={5} md={5} sm={12} sx={12} className=''>
+                <button className='py-2 px-4 !bg-transparent border-red-700  text-gray-200 hover:border-red-600 text-gray-50 !text-md flex gap-1 items-center'>
+                  <a className='!text-[15px] flex gap-2 items-center ' href={`mailto:${"hamtah112@gmail.com"}`} > Inquiry <SendHorizonalIcon className='w-4' /></a></button>
+              </div>
+              <div item lg={5} md={5} sm={12} sx={12} className='w-full md:w-3/5 flex justify-center overflow-hidden'>
                 <ProductSlider products={products} />
-              </Grid>
-            </Grid>
+              </div>
+            </div>
             {/* <motion.div
           initial="hidden"
           animate="visible"
           variants={gridItemVariants}
           transition={{ duration: 0.9, delay: 0.9 }}
         >  */}
-            <div className='dfi mt15'>
-              <div className='flex items-center justify-evenly w-full'>
-              <h1 style={{ width: "fit-content" }}>Our Projects   </h1>
-             
-            
-            <div className={styles['project-tags']}>
-              <Button className={styles.tag} onClick={() => handleTagClick("clear")}>Clear</Button>
-              {tags.map((tag, index) => (
-                <Button
-                  key={index}
-                  className={`${styles.tag} ${tag === selectedTag ? styles.active : ""}`}
-                  onClick={() => handleTagClick(tag)}
-                >
-                  <span>{tag}</span>
-                </Button>
-              ))}
+            <div className="flex flex-col gap-6 mt-4">
+              {/* Header Section */}
+              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+                <h1 className="text-xl font-semibold text-gray-400">Our Products</h1>
 
-            </div>
+                {/* Tags Section */}
+                <div className="flex  items-center gap-2">
+                  <a
+                    className="px-3 py-1 text-sm font-medium text-zinc-500 bg-transparent  rounded hover:text-gray-200"
+                    onClick={() => handleTagClick("clear")}
+                  >
+                    Clear
+                  </a>
+                  {tags.map((tag, index) => (
+                    <a
+                      key={index}
+                      className={`px-3 py-2 text-sm font-medium rounded ${tag === selectedTag
+                        ? "border-b-2 text-white"
+                        : "bg-transparent text-gray-400 hover:text-gray-200"
+                        }`}
+                      onClick={() => handleTagClick(tag)}
+                    >
+                      {tag}
+                    </a>
+                  ))}
+                </div>
 
-            <input
-                variant='standard'
-                type="text"
-                size='large'
-                placeholder="Search by title"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                // onKeyDown={handleSearch}
-                className={`${styles.search} !text-white`}
-              />
-            </div>
+                {/* Search Input */}
+                <div className="flex py-1 px-2 rounded-lg items-center w-4/5 md:w-auto border-b-2 outline outline-1 border-red-400 focus-within:border-blue-500">
+                  <Search className="text-gray-200 mr-1" />
+                  <input
+                    type="text"
+                    placeholder="Search by title"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full bg-transparent px-4 py-2 outline-none border-none   text-white placeholder-white focus:outline-0 focus:border-none"
+                  />
+                </div>
 
-            </div>
-            <div className={styles['project-cards']}>
-              <Grid container spacing={2}>
+              </div>
 
-
+              {/* Projects Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {data.map((project, index) => (
-
-                  <Grid item lg={4} md={6} sm={12} sx={12} className='jcc'>
-                    {/* <motion.div
-           initial={{ opacity: 0 }}
-           animate={{ opacity: 1 }}
-           exit={{ opacity: 0 }}
-           transition={{ duration: 0.9 }}
-         > */}
-                    <div key={index} className={`${styles['project-card']} !bg-black ${!project.image ? styles.red : ''}`}>
-                      {project.image ? <div className={`${styles['project-image']} !bg-zinc-800`}>
-                        <img src={project.image} alt={project.title} />
-                      </div> : null}
-                      <div className={styles['project-details']}>
-                        <h3>{project.title}</h3>
-                        <p>{project.description}</p>
-                        {project.tag ? <span className={styles['category-tag']}>{project.tag}</span> : null}
+                  <div
+                    key={index}
+                    className={` rounded-lg  overflow-hidden ${!project.image ? "border-2 border-red-500" : ""
+                      }`}
+                  >
+                    {project.image && (
+                      <div className="h-72 border bg-zinc-800 custom-shadow">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full p-2 object-scale-down hover:scale-110"
+                        />
                       </div>
+                    )}
+                    <div className="p-4 !pt-1 text-white">
+                      <h3 className="text-lg font-bold !my-1">{project.title}</h3>
+                      <p className="text-sm text-gray-400 !my-1">{project.description}</p>
+                      {project.tag && (
+                        <span className="inline-block mt-2 px-2 py-1 text-xs font-medium bg-blue-600 rounded">
+                          {project.tag}
+                        </span>
+                      )}
                     </div>
-                    {/* </motion.div> */}
-
-                  </Grid>
-
+                  </div>
                 ))}
-
-
-              </Grid>
+              </div>
             </div>
+
+
             {/* </motion.div> */}
           </div>
         </div>
