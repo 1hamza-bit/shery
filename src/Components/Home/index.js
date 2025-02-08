@@ -111,18 +111,26 @@ const Home = () => {
 
     return (
         <>
+            <Header />
+
             <Fade cascade damping={0.1}>
+
                 <div container className="main" >
                     {/* <hr />
                     <hr /> */}
 
-                    <Header />
 
                     <Grid container>
 
                         <Grid className='overmain' item lg={6} md={6} sm={12} xs={12}>
+
                             <div className='w70p'>
-                                <h1>Shaharyar Traders</h1>
+                                <div className="inline-block px-4 py-2 bg-orange-500/20 backdrop-blur-sm rounded-full mb-6">
+                                    <span className="text-[#E9B57A]">
+                                        Next-Gen Hydraulic Technology
+                                    </span>
+                                </div>
+                                <h1 className='text-5xl md:text-6xl font-bold mb-6 '>Shaharyar Traders</h1>
                                 <div style={{ textAlign: 'center' }}>
                                     <Divider className='divider' />
                                 </div>
@@ -150,37 +158,37 @@ const Home = () => {
                                 {/* Boxes */}
                                 <div className="flex  gap-6 boxes">
                                     <div className='flex flex-col gap-4 items-center'>
-                                    {/* High Quality */}
-                                    <div className="box w-full md:w-1/2 p-4">
-                                        <HighQuality />
-                                        <h2 className="text-lg font-semibold mt-2">High Quality</h2>
-                                        <p>Choose rubber hoses made from high-quality materials to ensure durability and longevity.</p>
-                                    </div>
+                                        {/* High Quality */}
+                                        <div className="box w-full md:w-1/2 p-4">
+                                            <HighQuality />
+                                            <h2 className="text-lg font-semibold mt-2">High Quality</h2>
+                                            <p>Choose rubber hoses made from high-quality materials to ensure durability and longevity.</p>
+                                        </div>
 
-                                    {/* Industry Standards */}
-                                    <div className="box w-full md:w-1/2 p-4">
-                                        <StarRounded />
-                                        <h2 className="text-lg font-semibold mt-2">Industry Standards</h2>
-                                        <p>Compliance with standards ensures that the hoses meet safety and performance requirements.</p>
-                                    </div>
+                                        {/* Industry Standards */}
+                                        <div className="box w-full md:w-1/2 p-4">
+                                            <StarRounded />
+                                            <h2 className="text-lg font-semibold mt-2">Industry Standards</h2>
+                                            <p>Compliance with standards ensures that the hoses meet safety and performance requirements.</p>
+                                        </div>
 
                                     </div>
 
                                     <div className='flex flex-col gap-4 '>
 
-                                    {/* High Pressure */}
-                                    <div className="box w-full md:w-1/2 p-4">
-                                        <PrecisionManufacturingIcon />
-                                        <h2 className="text-lg font-semibold mt-2">High Pressure</h2>
-                                        <p>Choose hoses to handle the maximum working pressure of your system without failure or leakage.</p>
-                                    </div>
+                                        {/* High Pressure */}
+                                        <div className="box w-full md:w-1/2 p-4">
+                                            <PrecisionManufacturingIcon />
+                                            <h2 className="text-lg font-semibold mt-2">High Pressure</h2>
+                                            <p>Choose hoses to handle the maximum working pressure of your system without failure or leakage.</p>
+                                        </div>
 
-                                    {/* Compatibility */}
-                                    <div className="box w-full md:w-1/2 p-4">
-                                        <BuildCircleIcon />
-                                        <h2 className="text-lg font-semibold mt-2">Compatibility</h2>
-                                        <p>Look for hoses designed to handle various fluids, including water, oil, fuels, chemicals, and gases.</p>
-                                    </div>
+                                        {/* Compatibility */}
+                                        <div className="box w-full md:w-1/2 p-4">
+                                            <BuildCircleIcon />
+                                            <h2 className="text-lg font-semibold mt-2">Compatibility</h2>
+                                            <p>Look for hoses designed to handle various fluids, including water, oil, fuels, chemicals, and gases.</p>
+                                        </div>
 
                                     </div>
                                 </div>
@@ -189,76 +197,72 @@ const Home = () => {
                     </div>
 
                     {/* Right Section */}
-                    <div className="lg:w-5/12 md:w-1/2 w-full p-8 md:p-20 pt-10 md:pt-80 text-left">
-                        <Fade delay={0.4} fraction={0.4}>
-                            <h1 className="text-2xl font-bold whitespace-normal">Providing the most reliable Rubber hoses by getting them from the best Manufacturers in the World</h1>
-                            <p className="mt-4 whitespace-normal">
-                                At Shaharyar Traders, we bring you unrivaled quality with our selection of rubber hoses sourced from top-tier manufacturers worldwide.
-                                Partnering with industry leaders renowned for their innovation and commitment to excellence, we ensure that each hose meets rigorous quality standards. Count on us to deliver reliable solutions for all your fluid transfer needs.
-                            </p>
-                        </Fade>
+                    <div className="lg:w-5/12 md:w-1/2 w-full py-10 sm:py-20 md:py-40 text-left px-8 sm:px-6 max-w-[84vw]">
+                        <div className='md:w-3/4 w:5/6'>
+
+
+                            <Fade delay={0.4} fraction={0.4}>
+                                <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold whitespace-normal">
+                                    Providing the most reliable Rubber hoses by getting them from the best Manufacturers in the World
+                                </h1>
+                                <p className="mt-4 text-sm sm:text-base whitespace-normal">
+                                    At Shaharyar Traders, we bring you unrivaled quality with our selection of rubber hoses sourced from top-tier manufacturers worldwide.
+                                    Partnering with industry leaders renowned for their innovation and commitment to excellence, we ensure that each hose meets rigorous quality standards. Count on us to deliver reliable solutions for all your fluid transfer needs.
+                                </p>
+                            </Fade>
+                        </div>
                     </div>
+
 
                 </div>
 
-                <div className='featured'>
-                    <h1 className='pl-8 mt-8 '><Fade cascade damping={0.01}> Our Most Popular Products</Fade></h1>
+                <div className='featured  my-8'>
+                    <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center md:text-left px-4 sm:px-6 mb-4 sm:mb-6">
+                        <Fade cascade damping={0.01}>Our Most Popular Products</Fade>
+                    </h1>
                     <hr className='ml-8 mt-2 ' />
-                    <Grid container spacing={0} className='second'>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
                         {products.map((product, index) => (
-                            <Grid item lg={3} md={4} sm={12} xs={12}>
-                                <Card className='card' sx={{ maxWidth: 345 }}>
-
-                                    <div className='img overflow-hidden'>
-                                        <CardMedia
-                                            component="img"
-                                            height="240"
-                                            image={product.image}
-                                            alt="green iguana"
-                                        />
-                                    </div>
-                                    <CardContent >
-                                        <Typography gutterBottom variant="h5" component="div">
-                                            {product.title}
-                                        </Typography>
-                                        <Typography className='content' variant="body2" color="text.secondary">
-                                            {product.description}
-                                        </Typography>
-                                    </CardContent>
-                                    <CardActionArea>
-                                        <Button variant='contained' onClick={() => handleClickOpen(product)} fullWidth>See more</Button>
-                                    </CardActionArea>
-                                </Card>
-                                <Dialog
-                                    open={openDialog}
-                                    TransitionComponent={Transition}
-                                    onClose={handleClose}
-                                    className='productmodal'
-                                    aria-describedby="product detail modal"
-                                >
-                                    <DialogTitle>{selectedProduct?.title} details</DialogTitle>
-                                    <DialogContent>
-                                        <DialogContentText id="product detail modal-description">
-                                            <p>{selectedProduct?.description}</p>
-                                        </DialogContentText>
-                                    </DialogContent>
-                                    <DialogActions>
-                                        <Button onClick={handleClose}>Close</Button>
-                                    </DialogActions>
-                                </Dialog>
-                            </Grid>
+                            <div key={index} className=" text-white p-4 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 border border-red-700 relative flex flex-col h-full">
+                                <div className="overflow-hidden rounded-xl flex-grow">
+                                    <img src={product.image} alt={product.title} className="w-full h-60 object-cover transform transition duration-300 hover:scale-110" />
+                                </div>
+                                <div className="p-4 flex flex-col flex-grow">
+                                    <h3 className="text-lg font-semibold mb-2 flex-grow">{product.title}</h3>
+                                    <p className="text-sm text-gray-400 flex-grow">{product.description}</p>
+                                </div>
+                                <div className="mt-auto">
+                                    <button
+                                        className="w-full bgmain hover:bg-orange-700 text-white font-semibold py-2 rounded-xl transition duration-300"
+                                        onClick={() => handleClickOpen(product)}
+                                    >
+                                        See More
+                                    </button>
+                                </div>
+                            </div>
                         ))}
 
-                    </Grid>
+                        {openDialog && selectedProduct && (
+                            <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4">
+                                <div className="bg-gray-900 text-white p-6 rounded-2xl shadow-2xl max-w-lg w-full">
+                                    <h2 className="text-xl font-bold mb-4">{selectedProduct.title} Details</h2>
+                                    <p className="text-gray-400">{selectedProduct.description}</p>
+                                    <div className="mt-4 flex justify-end">
+                                        <button className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg" onClick={handleClose}>Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                    </div>
                 </div>
                 <Grid container spacing={0} className='second'>
                     <Grid item className='right' lg={6} md={6} sm={12} xs={12}>
                         <div className=''>
-                            <h2 className='pt10p'>About Shaharyar Trading</h2>
+                            <h2 className='pt10p'>About Shaharyar Traders</h2>
                             <div style={{ textAlign: 'center', width: "100%" }}>
                                 <hr className=' divider' />
                             </div>
-                            <Typography className='twh'>A hydraulic hose trading company, such as Shaharyar Trading, specializes in supplying high-quality hydraulic hoses</Typography>
+                            <Typography className='twh'>A hydraulic hose trading company, such as Shaharyar Traders, specializes in supplying high-quality hydraulic hoses</Typography>
                         </div>
                     </Grid>
                     <Grid item lg={6} md={6} sm={12} xs={12}>

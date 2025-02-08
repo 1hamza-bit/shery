@@ -29,7 +29,8 @@ body {
   line-height: initial !important;
   background-color: rgb(26, 26, 27);
   /* background: linear-gradient(to bottom right, rgba(7, 7, 12, 0.5), rgba(1, 82, 71, 0.1));  */
-
+overflow-x: hidden ;
+width: 100vw;
 
 }
 
@@ -176,3 +177,8 @@ a{
   box-shadow:  20px 20px 60px #686868,
   -20px -20px 60px #b1a3a3;
 } */
+
+
+.blurs{
+  backdrop-filter: blur(10px);
+}

@@ -8,19 +8,19 @@
     min-height: 600px;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-top: -1%;
-    padding-top: 3%;
+    margin-top: 0%;
+    padding-top: 0%;
 
 }
 .featured{
 
 h1{
-    color: antiquewhite;
+    color:  #E9B57A;
     font-size: 29px;
     
 }
 hr{
-    color: antiquewhite;
+    color:  #E9B57A;
     width: 50%;
 }
 }
@@ -100,7 +100,7 @@ hr{
     margin: 8%;
     /* margin-left: 2%; */
     background-color: rgba(7, 7, 10, 0.1) !important;
-    color: antiquewhite !important;
+    color:  #E9B57A !important;
     min-height: 450px;
     max-height: 480px;
     overflow: hidden;
@@ -145,7 +145,7 @@ hr{
     background-color: rgb(34, 34, 34);
     text-align: center;
     /* padding-top: 10%; */
-    /* color: antiquewhite; */
+    /* color:  #E9B57A; */
     padding: 1%;
 }
 
@@ -154,7 +154,7 @@ hr{
     background-color: rgb(34, 34, 34);
     text-align: center;
     /* padding-top: 10%; */
-    /* color: antiquewhite; */
+    /* color:  #E9B57A; */
     padding: 1%;
 }
 
@@ -208,7 +208,7 @@ hr{
   .sApp {
   text-align: center;
 //   background-color: #000;
-  height: 100vh;
+//   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

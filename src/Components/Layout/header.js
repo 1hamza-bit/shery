@@ -1,157 +1,80 @@
-import { Dialog, DialogContent, Grid, TextField } from "@mui/material";
-import * as React from 'react'; 
-import { AppBar, Box, Toolbar, IconButton, Typography, Menu, MenuItem, Container, Avatar, Button, Tooltip } from '@mui/material'; 
-import MenuIcon from '@mui/icons-material/Menu'; 
-import AdbIcon from '@mui/icons-material/Adb';
-import './index.scss'
-import { Link, useNavigate } from "react-router-dom";
-import { DataSaverOff } from "@mui/icons-material";
-import shop from "../../Assets/shophose.jpg"
-
-const pages = ['Products', 'Contact' , 'About'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
-    const navigate = useNavigate();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
-   const handleNavigate=(page) => {
-    navigate(page);
-    }
-  
-    const handleOpenNavMenu = (event) => {
-      setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => {
-      setAnchorElUser(event.currentTarget);
-    };
-  
-    const handleCloseNavMenu = () => {
-      setAnchorElNav(null);
-    };
-  
-    const handleCloseUserMenu = () => {
-      setAnchorElUser(null);
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest(".dropdown-container")) {
+        setDropdownOpen(false);
+      }
     };
 
-    return (
-        <>
-        <Grid>
-        <AppBar position="static" className="header">
-      <Container  fullWidth>
-        <Toolbar disableGutters className="toolbar">
-          <DataSaverOff sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-          <Link to='/'>Shaharyar Traders</Link>  
-          </Typography>
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              className="mobilemenu"
-              sx={{
-                display: { xs: 'block', md: 'none',width: "90%" },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center"><Link className={`navitem ${window.location.pathname === page ? 'active' : ''}`} to={"/" + page.toLowerCase()}>{page}</Link></Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            <Link to='/'>Shahzad Traders</Link>  
-          </Typography>
-          <Box sx={{ flexGrow: 1, justifyContent: "end", display: { xs: 'none', md: 'flex' } }}>
+  return (
+    <header className="w-full sticky top-0 left-0 z-50 bg-black/40 blurs border-b border-white/20 text-white transition-all">
+      {/* Top Bar */}
+      <div className="bg-black/70 hidden md:flex justify-between items-center text-sm px-8 py-2 border-b border-gray-700">
+        <div className="flex items-center space-x-6">
+          <a href="tel:1-800-HYDRAULIC" className="flex items-center space-x-2">
+            <span>1-800-HYDRAULIC</span>
+          </a>
+          <a href="mailto:contact@hydraulicsolutions.com" className="flex items-center space-x-2">
+            <span>shahzadtrading123@gmail.com.com</span>
+          </a>
+        </div>
+        <div className="space-x-6">
+          <Link to="#" className="hover:text-[#E9B57A]">Support</Link>
+          <Link to="#" className="hover:text-[#E9B57A]">Careers</Link>
+        </div>
+      </div>
 
-          <Button
-                // key={page}
-                onClick={()=>handleNavigate("/about")}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-            <Link className={`navitem ${window.location.pathname === '/about' ? 'active' : ''}`}>About Us</Link>   
-              </Button>
-          
-              <Button
-                // key={page}
-                onClick={()=>handleNavigate("/products")}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-            <Link className={`navitem ${window.location.pathname === '/products' ? 'active' : ''}`}>Products</Link>   
-              </Button>
+      {/* Main Navbar */}
+      <nav className="flex justify-between items-center px-6 md:px-10 py-4">
+        {/* Logo */}
+        <Link to="/" className="text-2xl font-bold text-[#E9B57A]">
+            Shaharyar<span className="text-white"> Traders</span>
+        </Link>
 
-              <Button
-                // key={page}
-                onClick={()=>handleNavigate("/contact")}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-               <Link className={`navitem ${window.location.pathname === '/contact' ? 'active' : ''}`} > Contact </Link>
-              </Button>
-       
-          </Box>
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex space-x-8">
+         
+          <Link to="/products" className="hover:text-[#E9B57A] transition-all">Products</Link>
+          {/* <Link to="/solutions" className="hover:text-[#E9B57A] transition-all">Solutions</Link> */}
+          <Link to="/about" className="hover:text-[#E9B57A] transition-all">About Us</Link>
+          <Link to="/contact" className="hover:text-[#E9B57A] transition-all">Contact</Link>
+        </div>
 
-          
-        </Toolbar>
-      </Container>
-    </AppBar>
-        </Grid>
-        </>
+        {/* Mobile Menu Button */}
+        <div className="md:hidden text-2xl bg-transparent" onClick={() => setMobileMenuOpen(true)}>
+          ☰
+        </div>
+      </nav>
 
-    )
-}
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-lg flex flex-col items-center justify-center space-y-6 text-lg transition-all">
+          <button className="absolute top-6 right-6 text-3xl" onClick={() => setMobileMenuOpen(false)}>
+            ✖
+          </button>
+          <Link to="/" className="text-2xl font-bold text-[#E9B57A]" onClick={() => setMobileMenuOpen(false)}>
+            HydraulicPro
+          </Link>
+          <Link to="/products" className="hover:text-[#E9B57A] transition-all" onClick={() => setMobileMenuOpen(false)}>Products</Link>
+          {/* <Link to="/services" className="hover:text-[#E9B57A] transition-all" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+          <Link to="/solutions" className="hover:text-[#E9B57A] transition-all" onClick={() => setMobileMenuOpen(false)}>Solutions</Link> */}
+          <Link to="/about" className="hover:text-[#E9B57A] transition-all" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+          <Link to="/contact" className="hover:text-[#E9B57A] transition-all" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+        </div>
+      )}
+    </header>
+  );
+};
 
 export default Header;

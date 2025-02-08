@@ -80,7 +80,7 @@ const About = () => {
     return (
         <>
             <div className="about">
-                <div className="overlay mt-8">
+                <div className="overlay mt-1">
                     <Header />
                     <Grid container spacing={1} className="map">
                         <Grid item lg={6} md={6} sm={12} xs={12}>
@@ -124,7 +124,7 @@ const About = () => {
 
                     <Grid container spacing={1} className="snd">
                         <Grid item lg={12} md={12} sm={12} xs={12}>
-                            <div className="text-center m-28">
+                            <div className="text-center m-12 md:m-28">
                                 <h2 className="underline">Who we are</h2>
                                 <div className="flex justify-center">
                                     <p className="max-w-4xl	!mt-0 text-lg	">Based in Lahore, Pakistan, Shaharyar Traders is a renowned establishment dedicated to providing the highest quality hoses to the local market.
