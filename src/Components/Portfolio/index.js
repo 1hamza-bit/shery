@@ -6,6 +6,8 @@ import Header from '../Layout/header';
 // import axios from 'axios';
 // import { CSSTransition } from 'react-transition-group';
 // import { AnimatePresence, motion, useAnimation } from 'framer-motion';
+// import * as tf from "@tensorflow/tfjs";
+// import * as use from "@tensorflow-models/universal-sentence-encoder";
 import green from '../../Assets/png green.png'
 import pipe from '../../Assets/pipe.png'
 import greenpipe from '../../Assets/green pipe.jpg'
@@ -23,58 +25,58 @@ import firecontainer from '../../Assets/firecontainer2.jpeg'
 import { debounce } from 'lodash';
 import ProductSlider from './Slider';
 import { Search, SendHorizonalIcon } from 'lucide-react';
+import axios from 'axios';
+import Image from 'next/image';
 
 const projectData = [
   {
-    title: 'Project 1',
-    category: 'Web Development',
-    description: 'Description of project 1.',
+    title: 'High-Pressure Hydraulic Hose',
+    category: 'Hydraulic Hoses',
+    description: 'Engineered for durability and high-pressure performance, this hydraulic hose is ideal for heavy-duty industrial applications requiring reliability and flexibility.',
     image: green,
-    tag: "Hydraulic hose"
+    tag: 'Hydraulic Hose',
   },
   {
-    title: 'Project 2',
-    category: 'UI/UX Design',
-    description: 'Description of project 2.',
+    title: 'Standard Hydraulic Hose',
+    category: 'Hydraulic Hoses',
+    description: 'A versatile hydraulic hose designed for a wide range of fluid transfer needs, offering excellent durability and flexibility for industrial use.',
     image: hydraulic,
-    tag: "Hydraulic hose"
+    tag: 'Hydraulic Hose',
   },
   {
-    title: 'Project 2',
-    category: 'UI/UX Design',
-    description: "Introducing our star performers – the epitome of reliability and versatility in rubber hoses Engineered for durability and flexibility our most popular products deliver unmatched performance across various applications. From heavy-duty industrial use to everyday tasks"
-
-    // image: 'https://daubnerusa.com/wp-content/uploads/2021/04/4129.jpg',
-    // tag: "Hydraulic hose"
-  },
-  {
-    title: 'Project 1',
-    category: 'Web Development',
-    description: 'Description of project 1.',
-    image: canvas,
-    tag: "Hydraulic hose"
-  },
-  {
-    title: 'Project 2',
-    category: 'UI/UX Design',
-    description: "Introducing our star performers – the epitome of reliability and versatility in rubber hoses Engineered for durability and flexibility our most popular products deliver unmatched performance across various applications. From heavy-duty industrial use to everyday tasks"
-    // image: 'https://www.thespruce.com/thmb/TZytWxNYr0nvxNDyvLBMjUP9JqU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/3SP4153399_hero-90bfa8e547794d269a9283a94f4ff74e.jpg',
-    // tag: "Hydraulic hose"
-  },
-  {
-    title: 'Project 2',
-    category: 'UI/UX Design',
-    description: 'Description of project 2.',
-    image: gas,
-    tag: "Hydraulic hose"
-  },
-
-  {
-    title: 'Project 2',
-    category: 'UI/UX Design',
-    description: 'Description of project 2.',
+    title: 'Firefighting Hose',
+    category: 'Fire Hoses',
+    description: 'Introducing our star performer – a fire hose built for reliability and versatility. Engineered to deliver under high pressure, it’s perfect for firefighting operations.',
     image: fire,
-    tag: "Hydraulic hose"
+    tag: 'Fire Hose',
+  },
+  {
+    title: 'Suction Hose',
+    category: 'Suction Hoses',
+    description: 'Designed for powerful suction applications, this hose ensures efficient fluid transfer in industrial and commercial settings with unmatched durability.',
+    image: canvas,
+    tag: 'Suction Hose',
+  },
+  {
+    title: 'High-Pressure Pipe Hose',
+    category: 'Pressure Pipes',
+    description: 'A robust pressure pipe hose engineered for extreme pressure levels, delivering top performance across heavy-duty industrial tasks and everyday use.',
+    image: gas,
+    tag: 'Pressure Pipe',
+  },
+  {
+    title: 'Reinforced Hydraulic Hose',
+    category: 'Hydraulic Hoses',
+    description: 'This reinforced hydraulic hose offers superior strength and flexibility, making it a reliable choice for demanding hydraulic systems.',
+    image: greenpipe,
+    tag: 'Hydraulic Hose',
+  },
+  {
+    title: 'Heavy-Duty Fire Hose',
+    category: 'Fire Hoses',
+    description: 'Built to withstand intense conditions, this heavy-duty fire hose provides exceptional performance for firefighting and emergency response applications.',
+    image: redpipe,
+    tag: 'Fire Hose',
   },
   // Add more projects here
 ];
@@ -87,11 +89,14 @@ const Projects = () => {
   const [data, setData] = useState(projectData);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTag, setSelectedTag] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const [searchResults, setSearchResults] = useState(projectData);
   const [data1, setData1] = useState([]);
   const [tags, setTags] = useState([
     "Hydraulic hose", " Suction hose",
   ]);
+  const [model, setModel] = useState(null);
+  const [movieEmbeddings, setMovieEmbeddings] = useState(null);
 
   // useEffect(() => {
   //   axios
@@ -111,6 +116,32 @@ const Projects = () => {
   //       console.error('Error fetching data:', error);
   //     });
   // }, []);
+
+  // useEffect(() => {
+  //   const loadModel = async () => {
+  //     setIsLoading(true);
+  //     const loadedModel = await use.load();
+  //     setModel(loadedModel);
+
+  //     // Precompute embeddings for all movie descriptions
+  //     const descriptions = projectData.map((movie) => `${movie.title} ${movie.description}`);
+  //     const embeddings = await loadedModel.embed(descriptions);
+  //     setMovieEmbeddings(embeddings);
+  //     setIsLoading(false);
+  //   };
+  //   loadModel();
+  // }, []);
+
+  // Compute cosine similarity between two vectors
+  const cosineSimilarity = (a, b) => {
+    if (!(a instanceof tf.Tensor) || !(b instanceof tf.Tensor)) {
+      throw new Error("Inputs must be TensorFlow tensors");
+    }
+    const dotProduct = tf.dot(a, b).dataSync()[0];
+    const normA = tf.norm(a).dataSync()[0];
+    const normB = tf.norm(b).dataSync()[0];
+    return dotProduct / (normA * normB);
+  };
 
   const handleTagClick = (selectedTag2) => {
     debugger
@@ -155,9 +186,11 @@ const Projects = () => {
   useEffect(() => {
     const debouncedSearch = debounce((term) => {
       if (term.length >= 2) {
+        
         // Perform the search operation here, for example, call an API or update the state
         console.log(`Searching for: ${term}`);
         const results = projectData.filter(item =>
+          
           item.title.toLowerCase().includes(term.toLowerCase())
         );
 
@@ -210,6 +243,29 @@ const Projects = () => {
 
   // };
 
+  const searchWithAI = async (term) => {
+    if (!model || !movieEmbeddings) return;
+
+    setIsLoading(true);
+    const queryEmbedding = await model.embed([term]);
+    const similarities = projectData.map((_, index) => {
+      const movieEmbedding = movieEmbeddings.slice([index, 0], [1, -1]);
+      return cosineSimilarity(queryEmbedding, movieEmbedding);
+    });
+
+    // Rank movies by similarity
+    const rankedResults = projectData
+      .map((movie, index) => ({
+        ...movie,
+        similarity: similarities[index],
+      }))
+      .sort((a, b) => b.similarity - a.similarity)
+      .filter((movie) => movie.similarity > 0.5); // Threshold for relevance
+
+    setData(rankedResults);
+    setIsLoading(false);
+  };
+
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
     // handleSearch(); // Trigger search on every change
@@ -248,11 +304,12 @@ const Projects = () => {
                   these hoses are crafted to withstand the toughest conditions while ensuring optimal functionality.
                   Trust in the quality that sets the standard –
                   explore our top-rated rubber hoses today and experience durability like never before.</p>
-                <button className='py-2 px-4 !bg-transparent border-red-700  text-gray-200 hover:border-red-600 text-gray-50 !text-md flex gap-1 items-center'>
+                <button className='py-2 px-4 mt-4 !bg-transparent border border-red-700  text-gray-200 hover:border-red-600 text-gray-50 !text-md flex gap-1 items-center'>
                   <a className='!text-[15px] flex gap-2 items-center ' href={`mailto:${"hamtah112@gmail.com"}`} > Inquiry <SendHorizonalIcon className='w-4' /></a></button>
               </div>
               <div item lg={5} md={5} sm={12} sx={12} className='w-full md:w-3/5 flex justify-center overflow-hidden'>
-                <ProductSlider products={products} />
+                {/* <ProductSlider products={products} /> */}
+          <Image src={products[0].image} alt={products[0].title}   className="w-full h-full object-contain" />
               </div>
             </div>
             {/* <motion.div
@@ -289,7 +346,7 @@ const Projects = () => {
                 </div>
 
                 {/* Search Input */}
-                <div className="flex py-1 px-2 rounded-lg items-center w-4/5 md:w-auto border-b-2 outline outline-1 border-red-400 focus-within:border-blue-500">
+                <div className="flex py-1 px-2 rounded-lg items-center w-4/5 md:w-auto border-b-2  outline-none border-white-400 focus-within:border-blue-500">
                   <Search className="text-gray-200 mr-1" />
                   <input
                     type="text"
@@ -298,6 +355,7 @@ const Projects = () => {
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="w-full bg-transparent px-4 py-2 outline-none border-none   text-white placeholder-white focus:outline-0 focus:border-none"
                   />
+                  {/* <button onClick={searchWithAI}>Search</button> */}
                 </div>
 
               </div>
@@ -307,12 +365,12 @@ const Projects = () => {
                 {data.map((project, index) => (
                   <div
                     key={index}
-                    className={` rounded-lg  overflow-hidden ${!project.image ? "border-2 border-red-500" : ""
+                    className={` rounded-lg  overflow-hidden ${!project.image ? "border-2 border-none" : ""
                       }`}
                   >
                     {project.image && (
-                      <div className="h-72 border bg-zinc-800 custom-shadow">
-                        <img
+                      <div className="h-72  bg-zinc-800 custom-shadow">
+                        <Image
                           src={project.image}
                           alt={project.title}
                           className="w-full h-full p-2 object-scale-down hover:scale-110"

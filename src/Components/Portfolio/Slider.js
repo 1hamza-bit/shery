@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './index.module.scss'
+import Image from 'next/image';
 
 const ProductSlider = ({ products }) => {
   const settings = {
@@ -29,7 +30,7 @@ const ProductSlider = ({ products }) => {
     <Slider {...settings}>
       {products.map((product, index) => (
         <div key={index} className='slider !flex !justify-center'>
-          <img src={product.image} alt={product.title}   className="w-full h-full object-contain"
+          <Image src={product.image} alt={product.title}   className="w-full h-full object-contain"
           />
           {/* <h3>{product.title}</h3>
           <p>{product.description}</p> */}

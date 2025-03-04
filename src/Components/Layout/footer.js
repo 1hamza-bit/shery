@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -17,10 +17,10 @@ const Footer = () => {
             <h1 className="text-[#E9B57A] text-xl font-bold">Site Links</h1>
             <div className="w-full h-0.5 bg-[#E9B57A] my-2"></div>
             <ul className="space-y-2">
-              <li><Link to="/products" className="hover:text-[#E9B57A]">Products</Link></li>
-              <li><Link to="/contact" className="hover:text-[#E9B57A]">Contact</Link></li>
-              <li><Link to="/about" className="hover:text-[#E9B57A]">About</Link></li>
-              <li><Link to="/privacy" className="hover:text-[#E9B57A]">Privacy Policy</Link></li>
+              <li><Link href="/products" className="hover:text-[#E9B57A]">Products</Link></li>
+              <li><Link href="/contact" className="hover:text-[#E9B57A]">Contact</Link></li>
+              <li><Link href="/about" className="hover:text-[#E9B57A]">About</Link></li>
+              <li><Link href="/privacy" className="hover:text-[#E9B57A]">Privacy Policy</Link></li>
             </ul>
           </div>
           
@@ -44,7 +44,7 @@ const Footer = () => {
       </div>
       
       <div className="bg-black text-white text-center py-4 border-t border-[#E9B57A]">
-        <p>&copy; 2023 Shaharyar Traders. All rights reserved.</p>
+        <p>&copy; 2025 Shaharyar Traders. All rights reserved.</p>
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { X, Menu } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 
 const Header = () => {
@@ -35,23 +35,23 @@ const Header = () => {
           </a>
         </div>
         <div className="space-x-6">
-          <Link to="#" className="hover:text-[#E9B57A]">Support</Link>
-          <Link to="#" className="hover:text-[#E9B57A]">Careers</Link>
+          <Link href="#" className="hover:text-[#E9B57A]">Support</Link>
+          <Link href="#" className="hover:text-[#E9B57A]">Careers</Link>
         </div>
       </div>
 
       {/* Main Navbar */}
       <nav className="flex justify-between items-center px-6 md:px-10 py-4">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold text-[#E9B57A]">
+        <Link href="/" className="text-2xl font-bold text-[#E9B57A]">
           Shaharyar<span className="text-white"> Traders</span>
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8">
-          <Link to="/products" className="hover:text-[#E9B57A] transition-all">Products</Link>
-          <Link to="/about" className="hover:text-[#E9B57A] transition-all">About Us</Link>
-          <Link to="/contact" className="hover:text-[#E9B57A] transition-all">Contact</Link>
+          <Link href="/products" className="hover:text-[#E9B57A] transition-all">Products</Link>
+          <Link href="/about" className="hover:text-[#E9B57A] transition-all">About Us</Link>
+          <Link href="/contact" className="hover:text-[#E9B57A] transition-all">Contact</Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -68,12 +68,12 @@ const Header = () => {
         className={`fixed top-0 right-0 h-full bg-black text-white flex flex-col space-y-6 text-lg overflow-hidden ${
           mobileMenuOpen ? "py-20 px-8" : "p-0"
         }`}      >
-        <Link to="/" className="text-2xl font-bold text-[#E9B57A]">
+        <Link href="/" className="text-2xl font-bold text-[#E9B57A]">
           Shaharyar<span className="text-white"> Traders</span>
         </Link>
-        <Link to="/products" className="hover:text-[#E9B57A] transition-all" onClick={() => setMobileMenuOpen(false)}>Products</Link>
-        <Link to="/about" className="hover:text-[#E9B57A] transition-all" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
-        <Link to="/contact" className="hover:text-[#E9B57A] transition-all" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+        <Link href="/products" className="hover:text-[#E9B57A] transition-all" onClick={() => setMobileMenuOpen(false)}>Products</Link>
+        <Link href="/about" className="hover:text-[#E9B57A] transition-all" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+        <Link href="/contact" className="hover:text-[#E9B57A] transition-all" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
       </motion.div>
     </header>
   );
